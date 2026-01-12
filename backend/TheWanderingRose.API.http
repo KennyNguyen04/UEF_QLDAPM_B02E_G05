@@ -1,0 +1,6 @@
+@TheWanderingRose.API_HostAddress = http://localhost:5034
+
+GET {{TheWanderingRose.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
