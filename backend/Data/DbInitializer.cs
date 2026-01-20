@@ -150,14 +150,14 @@ public static class DbInitializer
                 RoomsCount = 1,
                 BedType = "02 giường 1m8 x 2m",
                 Price = 1900000,
-                ImageUrl = "https://images.unsplash.com/photo-1522771753033-6a0e69ed6dfb?auto=format&fit=crop&q=80&w=1200",
+                ImageUrl = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
                 ZoneId = roseHouse.Id,
                 Description = "Pink Rose House sở hữu vẻ đẹp ngọt ngào và lãng mạn, được bao quanh bởi vườn hoa hồng rực rỡ.",
                 Features = JsonSerializer.Serialize(new List<string> { "Sân hiên ngắm hoa", "Trà chiều miễn phí", "Nội thất Vintage" }),
                 SubImages = JsonSerializer.Serialize(new List<string>
                 {
-                    "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=600",
-                    "https://images.unsplash.com/photo-1505693436371-8d8c4c643c72?auto=format&fit=crop&q=80&w=600"
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=600"
                 })
             },
             new Room

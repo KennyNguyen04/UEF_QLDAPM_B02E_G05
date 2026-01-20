@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { galleryImages, galleryVideos, news } from '../constants';
 import { SectionTitle } from './SectionTitle';
+import { handleImageError } from '../utils';
 
 export const GalleryView: React.FC = () => {
   const [viewMode, setViewMode] = useState<'images' | 'videos'>('images');
@@ -17,6 +18,7 @@ export const GalleryView: React.FC = () => {
         <img 
           src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&q=80&w=2000" 
           alt="Gallery Hero" 
+          onError={handleImageError}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -47,6 +49,7 @@ export const GalleryView: React.FC = () => {
                       <img 
                         src={imgUrl} 
                         alt={`Gallery ${index + 1}`} 
+                        onError={handleImageError}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                   </div>
@@ -60,6 +63,7 @@ export const GalleryView: React.FC = () => {
                       <img 
                         src={video.thumbnailUrl} 
                         alt={`Video Thumbnail ${video.id}`} 
+                        onError={handleImageError}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
@@ -82,7 +86,7 @@ export const GalleryView: React.FC = () => {
              {news.map(n => (
                <div key={n.id} className="group cursor-pointer">
                   <div className="h-64 overflow-hidden mb-5 relative">
-                    <img src={n.imageUrl} alt={n.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+                    <img src={n.imageUrl} alt={n.title} onError={handleImageError} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
                     <div className="absolute top-0 right-0 bg-white text-primary px-3 py-1.5 text-[10px] font-bold font-serif tracking-wider">
                        24/10
                     </div>

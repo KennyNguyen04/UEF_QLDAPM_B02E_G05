@@ -1,5 +1,22 @@
+import React from 'react';
+
 export const formatCurrency = (amount: number): string => {
   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+};
+
+/**
+ * Fallback image placeholder khi ảnh không load được
+ */
+export const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=800';
+
+/**
+ * Handler cho sự kiện error của img - sử dụng ảnh fallback
+ */
+export const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  const target = e.currentTarget;
+  if (target.src !== FALLBACK_IMAGE) {
+    target.src = FALLBACK_IMAGE;
+  }
 };
 
 /**

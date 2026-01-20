@@ -3,6 +3,7 @@ import { ArrowRight, ArrowLeft, Loader2 } from 'lucide-react';
 import { api } from '../services/api';
 import { useTours, useNews } from '../services/useApi';
 import { Tour } from '../types';
+import { handleImageError } from '../utils';
 
 interface ExperiencesToursProps {
   onGoHome?: () => void;
@@ -177,7 +178,7 @@ export const ExperiencesTours: React.FC<ExperiencesToursProps> = ({ onGoHome, on
                 news?.map(item => (
                   <div key={item.id} className="group cursor-pointer">
                     <div className="h-[400px] overflow-hidden mb-6 relative">
-                      <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <img src={item.imageUrl} alt={item.title} onError={handleImageError} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       {item.id === 1 && (
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full">
                           <span className="block text-4xl font-serif font-bold text-transparent stroke-white" style={{ WebkitTextStroke: '1px white' }}>MUSIC</span>
@@ -220,6 +221,7 @@ export const ExperiencesTours: React.FC<ExperiencesToursProps> = ({ onGoHome, on
         <img
           src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=2000"
           alt="Experience and Tours Hero"
+          onError={handleImageError}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -288,6 +290,7 @@ export const ExperiencesTours: React.FC<ExperiencesToursProps> = ({ onGoHome, on
                 <img
                   src={tour.imageUrl}
                   alt={tour.title}
+                  onError={handleImageError}
                   className="w-full h-full object-cover shadow-lg"
                 />
               </div>
@@ -303,6 +306,7 @@ export const ExperiencesTours: React.FC<ExperiencesToursProps> = ({ onGoHome, on
             <img
               src="https://images.unsplash.com/photo-1504280509243-48907c0c9645?auto=format&fit=crop&q=80&w=800"
               alt="Tour Booking"
+              onError={handleImageError}
               className="w-full h-full object-cover shadow-xl"
             />
           </div>

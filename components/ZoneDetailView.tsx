@@ -1,6 +1,7 @@
 import React from 'react';
 import { Room, ZoneInfo } from '../types';
 import { ArrowRight, Users, Layout, Home, Bed, Utensils } from 'lucide-react';
+import { handleImageError } from '../utils';
 
 interface ZoneDetailViewProps {
   zoneName: 'Wooden House' | 'Rose House' | 'Villa';
@@ -42,6 +43,7 @@ export const ZoneDetailView: React.FC<ZoneDetailViewProps> = ({ zoneName, rooms,
         <img 
           src={info.heroImage} 
           alt={zoneName} 
+          onError={handleImageError}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40"></div>
@@ -82,7 +84,7 @@ export const ZoneDetailView: React.FC<ZoneDetailViewProps> = ({ zoneName, rooms,
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {info.introImages.map((img, idx) => (
             <div key={idx} className="h-64 overflow-hidden">
-               <img src={img} alt="Intro" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
+               <img src={img} alt="Intro" onError={handleImageError} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
             </div>
           ))}
         </div>
@@ -113,7 +115,7 @@ export const ZoneDetailView: React.FC<ZoneDetailViewProps> = ({ zoneName, rooms,
             <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
                <div className="md:w-3/5">
                  <div className="h-[350px] md:h-[450px]">
-                    <img src={room.imageUrl} alt={room.name} className="w-full h-full object-cover shadow-lg" />
+                    <img src={room.imageUrl} alt={room.name} onError={handleImageError} className="w-full h-full object-cover shadow-lg" />
                  </div>
                  {/* Long Left Arrow Below Image */}
                  <div className="mt-6 text-[#C4A484] font-light text-4xl overflow-hidden leading-none opacity-60">

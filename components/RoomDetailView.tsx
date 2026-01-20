@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Room } from '../types';
 import { rooms as allRooms } from '../constants';
 import { ArrowLeft, ArrowRight, Users, Layout, Home, Bed, Utensils } from 'lucide-react';
+import { handleImageError } from '../utils';
 
 interface RoomDetailViewProps {
   room: Room;
@@ -40,6 +41,7 @@ export const RoomDetailView: React.FC<RoomDetailViewProps> = ({ room, onBack, on
         <img 
           src={room.imageUrl} 
           alt={room.name} 
+          onError={handleImageError}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40"></div>
@@ -66,10 +68,10 @@ export const RoomDetailView: React.FC<RoomDetailViewProps> = ({ room, onBack, on
          {room.subImages && room.subImages.length >= 2 && (
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                  <div className="h-64 md:h-80 overflow-hidden">
-                    <img src={room.subImages[0]} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Sub 1"/>
+                    <img src={room.subImages[0]} onError={handleImageError} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Sub 1"/>
                  </div>
                  <div className="h-64 md:h-80 overflow-hidden">
-                    <img src={room.subImages[1]} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Sub 2"/>
+                    <img src={room.subImages[1]} onError={handleImageError} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Sub 2"/>
                  </div>
              </div>
          )}

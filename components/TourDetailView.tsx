@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tour } from '../types';
 import { ArrowLeft, Check, Star, Map } from 'lucide-react';
+import { handleImageError } from '../utils';
 
 interface TourDetailViewProps {
   tour: Tour;
@@ -13,7 +14,7 @@ export const TourDetailView: React.FC<TourDetailViewProps> = ({ tour, onBack, on
     <div className="bg-white min-h-screen pb-24">
        {/* Hero Image */}
        <div className="relative h-[60vh] w-full">
-           <img src={tour.imageUrl} alt={tour.title} className="w-full h-full object-cover" />
+           <img src={tour.imageUrl} alt={tour.title} onError={handleImageError} className="w-full h-full object-cover" />
            <div className="absolute inset-0 bg-black/40"></div>
            <div className="absolute top-24 left-6 md:left-20 z-20">
                <button onClick={onBack} className="flex items-center gap-2 text-white/90 hover:text-white text-xs uppercase tracking-widest transition-colors bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm">

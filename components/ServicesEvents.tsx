@@ -3,6 +3,7 @@ import { ArrowRight, ArrowLeft, Loader2 } from 'lucide-react';
 import { api } from '../services/api';
 import { useEvents, useNews } from '../services/useApi';
 import { EventServiceItem } from '../types';
+import { handleImageError } from '../utils';
 
 interface ServicesEventsProps {
   onGoHome?: () => void;
@@ -180,7 +181,7 @@ export const ServicesEvents: React.FC<ServicesEventsProps> = ({ onGoHome, onView
                 news?.map(item => (
                   <div key={item.id} className="group cursor-pointer">
                     <div className="h-[400px] overflow-hidden mb-6 relative">
-                      <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <img src={item.imageUrl} alt={item.title} onError={handleImageError} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       {item.id === 1 && (
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full">
                           <span className="block text-4xl font-serif font-bold text-transparent stroke-white" style={{ WebkitTextStroke: '1px white' }}>MUSIC</span>
@@ -223,6 +224,7 @@ export const ServicesEvents: React.FC<ServicesEventsProps> = ({ onGoHome, onView
         <img
           src="https://images.unsplash.com/photo-1519225421980-715cb0202128?auto=format&fit=crop&q=80&w=2000"
           alt="Services Events Hero"
+          onError={handleImageError}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -293,6 +295,7 @@ export const ServicesEvents: React.FC<ServicesEventsProps> = ({ onGoHome, onView
                 <img
                   src={service.imageUrl}
                   alt={service.title}
+                  onError={handleImageError}
                   className="w-full h-full object-cover shadow-lg"
                 />
               </div>
@@ -309,6 +312,7 @@ export const ServicesEvents: React.FC<ServicesEventsProps> = ({ onGoHome, onView
             <img
               src="https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=800"
               alt="Event Booking"
+              onError={handleImageError}
               className="w-full h-full object-cover shadow-xl"
             />
           </div>

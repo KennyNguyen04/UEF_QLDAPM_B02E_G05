@@ -5,6 +5,7 @@ import { RoomCard } from './RoomCard';
 import { GeneralCard } from './GeneralCard';
 import { useRooms, useAmenities, useNews, useEvents } from '../services/useApi';
 import { Room, News } from '../types';
+import { handleImageError } from '../utils';
 
 // Static intro articles (these are special content, not from API)
 const introArticles = [
@@ -227,15 +228,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { id: 'Rose House', name: "KHU ROSE HOUSE", img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600", desc: "Lãng mạn & Riêng tư" },
-              { id: 'Wooden House', name: "KHU WOODEN HOUSE", img: "https://images.unsplash.com/photo-1449156493391-d2cfa28e468b?auto=format&fit=crop&q=80&w=600", desc: "Ấm cúng & Gần gũi" },
-              { id: 'Villa', name: "KHU VILLA", img: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=600", desc: "Sang trọng & Đẳng cấp" },
+              { id: 'Wooden House', name: "KHU WOODEN HOUSE", img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600", desc: "Ấm cúng & Gần gũi" },
+              { id: 'Villa', name: "KHU VILLA", img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=600", desc: "Sang trọng & Đẳng cấp" },
             ].map((zone, idx) => (
               <div
                 key={idx}
                 className="relative group overflow-hidden h-[400px] cursor-pointer rounded-sm"
                 onClick={() => onViewZoneDetail && onViewZoneDetail(zone.id as any)}
               >
-                <img src={zone.img} alt={zone.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+                <img src={zone.img} alt={zone.name} onError={handleImageError} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-black/40 md:bg-black/20 md:group-hover:bg-transparent transition-colors">
                   <div className="border border-white/30 p-6 w-full h-full flex flex-col items-center justify-center backdrop-blur-[1px] md:group-hover:backdrop-blur-none transition-all">
@@ -310,7 +311,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 return (
                   <div key={n.id} className="min-w-[280px] snap-center md:min-w-0 group cursor-pointer" onClick={() => onViewNews && onViewNews(news)}>
                     <div className="h-64 overflow-hidden mb-5 relative rounded-sm">
-                      <img src={n.imageUrl} alt={n.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <img src={n.imageUrl} alt={n.title} onError={handleImageError} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       <div className="absolute top-0 right-0 bg-primary text-white px-3 py-1.5 text-[10px] font-bold font-serif tracking-wider">
                         {news.date || '24/10'}
                       </div>

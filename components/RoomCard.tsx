@@ -1,7 +1,7 @@
 import React from 'react';
 import { Room } from '../types';
 import { Users, Layout, Bed, Home } from 'lucide-react';
-import { formatCurrency } from '../utils';
+import { formatCurrency, handleImageError } from '../utils';
 
 interface RoomCardProps {
   room: Room;
@@ -15,6 +15,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, onBook }) => {
         <img 
           src={room.imageUrl} 
           alt={room.name} 
+          onError={handleImageError}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute bottom-0 left-0 bg-primary/90 text-white px-4 py-1 text-[10px] font-serif tracking-wider">

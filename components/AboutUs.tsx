@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Play, ArrowLeft, ArrowRight as ArrowRightIcon } from 'lucide-react';
+import { handleImageError } from '../utils';
 
 interface AboutUsProps {
   onNavigate: (view: 'gallery') => void;
@@ -13,6 +14,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigate }) => {
         <img 
           src="https://images.unsplash.com/photo-1628151016020-f57930cb994f?auto=format&fit=crop&q=80&w=2000" 
           alt="About Us Hero" 
+          onError={handleImageError}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/20"></div>
@@ -43,9 +45,9 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigate }) => {
 
         {/* Middle: 3 Images Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-           <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600" className="w-full h-64 object-cover" alt="Detail 1"/>
-           <img src="https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?auto=format&fit=crop&q=80&w=600" className="w-full h-64 object-cover" alt="Detail 2"/>
-           <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=600" className="w-full h-64 object-cover" alt="Detail 3"/>
+           <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600" className="w-full h-64 object-cover" alt="Detail 1" onError={handleImageError}/>
+           <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=600" className="w-full h-64 object-cover" alt="Detail 2" onError={handleImageError}/>
+           <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=600" className="w-full h-64 object-cover" alt="Detail 3" onError={handleImageError}/>
         </div>
 
         {/* Bottom: 2 Text Columns */}
@@ -69,7 +71,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigate }) => {
          <div className="container mx-auto px-6 mb-24">
             <div className="flex flex-col md:flex-row items-center gap-12">
                <div className="md:w-1/2">
-                  <img src="https://images.unsplash.com/photo-1599809275372-b40c7e937740?auto=format&fit=crop&q=80&w=800" alt="Vision" className="w-full h-[400px] object-cover shadow-lg" />
+                  <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&q=80&w=800" alt="Vision" className="w-full h-[400px] object-cover shadow-lg" onError={handleImageError} />
                </div>
                <div className="md:w-1/2 md:pl-8">
                   <h3 className="text-2xl font-serif text-primary mb-6">Tầm nhìn</h3>
@@ -84,7 +86,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigate }) => {
          <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row-reverse items-center gap-12">
                <div className="md:w-1/2">
-                  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" alt="Values" className="w-full h-[400px] object-cover shadow-lg" />
+                  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" alt="Values" className="w-full h-[400px] object-cover shadow-lg" onError={handleImageError} />
                </div>
                <div className="md:w-1/2 md:pr-8 text-right">
                   <h3 className="text-2xl font-serif text-primary mb-6">Giá trị</h3>
@@ -109,15 +111,15 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigate }) => {
          </div>
 
          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
-            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
-            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
-            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=600" onError={handleImageError} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=600" onError={handleImageError} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=600" onError={handleImageError} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+            <div className="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=600" onError={handleImageError} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
          </div>
          
          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="h-64 md:h-80 relative group cursor-pointer overflow-hidden">
-               <img src="https://images.unsplash.com/photo-1537726235470-8504e3beef77?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+               <img src="https://images.unsplash.com/photo-1537726235470-8504e3beef77?auto=format&fit=crop&q=80&w=800" onError={handleImageError} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
                   <div className="w-12 h-12 rounded-full border border-white flex items-center justify-center text-white pl-1 group-hover:bg-white group-hover:text-primary transition-all">
                      <Play size={20} fill="currentColor" />
@@ -125,7 +127,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigate }) => {
                </div>
             </div>
             <div className="h-64 md:h-80 relative group cursor-pointer overflow-hidden">
-               <img src="https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+               <img src="https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?auto=format&fit=crop&q=80&w=800" onError={handleImageError} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
                   <div className="w-12 h-12 rounded-full border border-white flex items-center justify-center text-white pl-1 group-hover:bg-white group-hover:text-primary transition-all">
                      <Play size={20} fill="currentColor" />
