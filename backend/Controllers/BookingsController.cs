@@ -17,6 +17,43 @@ public class BookingsController : ControllerBase
         _context = context;
     }
 
+    /// <summary>
+    /// Đếm số đêm cuối tuần (Thứ 7, Chủ nhật) trong khoảng thời gian đặt phòng
+    /// Đêm cuối tuần được tính dựa trên ngày check-in của đêm đó
+    /// </summary>
+    private int CountWeekendNights(DateTime checkIn, DateTime checkOut)
+    {
+        int weekendNights = 0;
+        var current = checkIn.Date;
+        var end = checkOut.Date;
+        
+        while (current < end)
+        {
+            // Thứ 7 = DayOfWeek.Saturday (6), Chủ nhật = DayOfWeek.Sunday (0)
+            if (current.DayOfWeek == DayOfWeek.Saturday || current.DayOfWeek == DayOfWeek.Sunday)
+            {
+                weekendNights++;
+            }
+            current = current.AddDays(1);
+        }
+        return weekendNights;
+    }
+
+    /// <summary>
+    /// Lấy tỷ lệ phụ thu cuối tuần từ cấu hình hệ thống
+    /// </summary>
+    private async Task<decimal> GetWeekendSurchargeRateAsync()
+    {
+        var config = await _context.SystemConfigs
+            .FirstOrDefaultAsync(c => c.ConfigKey == "WEEKEND_SURCHARGE_RATE");
+        
+        if (config == null || !decimal.TryParse(config.ConfigValue, out var rate))
+        {
+            return 10m; // Giá trị mặc định 10%
+        }
+        return rate;
+    }
+
     [HttpPost]
     public async Task<ActionResult<BookingResponseDto>> CreateBooking([FromBody] CreateBookingDto dto)
     {
@@ -77,16 +114,17 @@ public class BookingsController : ControllerBase
             customer.Phone = dto.Phone;
         }
 
-        // Calculate total price
-        decimal totalPrice = 0;
-        var nights = (dto.CheckOut - dto.CheckIn).Days;
+        // Calculate total price with weekend surcharge
+        decimal basePrice = 0;
+        // Số đêm tính bằng số ngày giữa ngày check-in và ngày check-out (bỏ qua giờ)
+        var nights = (dto.CheckOut.Date - dto.CheckIn.Date).Days;
         var bookingRooms = new List<BookingRoom>();
 
         foreach (var roomDto in dto.Rooms)
         {
             var room = await _context.Rooms.FindAsync(roomDto.RoomId);
             var roomPrice = room!.Price * nights * roomDto.Quantity;
-            totalPrice += roomPrice;
+            basePrice += roomPrice;
 
             bookingRooms.Add(new BookingRoom
             {
@@ -96,10 +134,24 @@ public class BookingsController : ControllerBase
             });
         }
 
+        // Calculate weekend surcharge
+        var weekendNights = CountWeekendNights(dto.CheckIn, dto.CheckOut);
+        var surchargeRate = await GetWeekendSurchargeRateAsync();
+        
+        // Tính phụ thu: Giá phòng mỗi đêm × số đêm cuối tuần × tỷ lệ phụ thu
+        decimal weekendSurchargeAmount = 0;
+        foreach (var roomDto in dto.Rooms)
+        {
+            var room = await _context.Rooms.FindAsync(roomDto.RoomId);
+            weekendSurchargeAmount += room!.Price * roomDto.Quantity * weekendNights * (surchargeRate / 100m);
+        }
+
+        var totalPrice = basePrice + weekendSurchargeAmount;
+
         // Generate booking code
         var bookingCode = "#OL" + new Random().Next(10000000, 99999999);
 
-        // Create booking
+        // Create booking with weekend surcharge info
         var booking = new Booking
         {
             BookingCode = bookingCode,
@@ -107,6 +159,9 @@ public class BookingsController : ControllerBase
             CheckIn = dto.CheckIn,
             CheckOut = dto.CheckOut,
             TotalPrice = totalPrice,
+            WeekendNights = weekendNights,
+            WeekendSurchargeRate = surchargeRate,
+            WeekendSurchargeAmount = weekendSurchargeAmount,
             Status = "pending",
             BookingRooms = bookingRooms
         };
@@ -135,7 +190,12 @@ public class BookingsController : ControllerBase
             booking.TotalPrice,
             booking.Status,
             new CustomerDto(customer.Id, customer.FullName, customer.Email, customer.Phone),
-            roomDetails
+            roomDetails,
+            new WeekendSurchargeInfoDto(
+                booking.WeekendNights,
+                booking.WeekendSurchargeRate,
+                booking.WeekendSurchargeAmount
+            )
         );
 
         return CreatedAtAction(nameof(GetBooking), new { code = booking.BookingCode }, response);
@@ -171,7 +231,12 @@ public class BookingsController : ControllerBase
                 br.Room.Name,
                 br.Quantity,
                 br.UnitPrice
-            )).ToList()
+            )).ToList(),
+            new WeekendSurchargeInfoDto(
+                booking.WeekendNights,
+                booking.WeekendSurchargeRate,
+                booking.WeekendSurchargeAmount
+            )
         );
 
         return Ok(response);

@@ -19,11 +19,12 @@ import { CheckoutView } from './components/CheckoutView';
 import { PaymentView } from './components/PaymentView';
 import { ConfirmationView } from './components/ConfirmationView';
 import { FAQView } from './components/FAQView';
+import { AdminConfigView } from './components/AdminConfigView';
 import { Room, News, EventServiceItem, Tour } from './types';
 import { rooms as allRooms, zonesData } from './constants';
 
 // Define View Types
-type ViewState = 'home' | 'about' | 'rooms' | 'services' | 'tours' | 'contact' | 'gallery' | 'faq' | 'room-detail' | 'zone-detail' | 'news-detail' | 'service-detail' | 'tour-detail' | 'booking-result' | 'checkout' | 'payment' | 'confirmation';
+type ViewState = 'home' | 'about' | 'rooms' | 'services' | 'tours' | 'contact' | 'gallery' | 'faq' | 'room-detail' | 'zone-detail' | 'news-detail' | 'service-detail' | 'tour-detail' | 'booking-result' | 'checkout' | 'payment' | 'confirmation' | 'admin-config';
 
 export const App: React.FC = () => {
   // MVC View State
@@ -51,6 +52,9 @@ export const App: React.FC = () => {
       bookingId: string
   } | null>(null);
 
+  // Weekend Surcharge Rate State
+  const [weekendSurchargeRate, setWeekendSurchargeRate] = useState(10);
+
   // Handle Scroll for Header Styling
   useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +62,22 @@ export const App: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Fetch weekend surcharge rate on mount
+  useEffect(() => {
+    const fetchSurchargeRate = async () => {
+      try {
+        const response = await fetch('/api/config/weekend-surcharge');
+        const data = await response.json();
+        if (data.success && data.data) {
+          setWeekendSurchargeRate(data.data.rate);
+        }
+      } catch (error) {
+        console.error('Failed to fetch surcharge rate:', error);
+      }
+    };
+    fetchSurchargeRate();
   }, []);
 
   // Navigation Handler
@@ -386,6 +406,7 @@ export const App: React.FC = () => {
               customerInfo={confirmedBookingData.customerInfo}
               roomConfigs={confirmedBookingData.roomConfigs}
               bookingId={confirmedBookingData.bookingId}
+              weekendSurchargeRate={weekendSurchargeRate}
               onBack={() => navigateTo('checkout')}
               onFinish={() => navigateTo('confirmation')}
           />
@@ -399,7 +420,13 @@ export const App: React.FC = () => {
               customerInfo={confirmedBookingData.customerInfo}
               roomConfigs={confirmedBookingData.roomConfigs}
               bookingId={confirmedBookingData.bookingId}
+              weekendSurchargeRate={weekendSurchargeRate}
               onBackHome={() => navigateTo('home')}
+          />
+      )}
+      {currentView === 'admin-config' && (
+          <AdminConfigView 
+              onBack={() => navigateTo('home')}
           />
       )}
 
@@ -428,6 +455,7 @@ export const App: React.FC = () => {
                  <li><button onClick={() => navigateTo('services')} className="hover:text-primary transition-colors">Dịch vụ & Tiện ích</button></li>
                  <li><button onClick={() => navigateTo('tours')} className="hover:text-primary transition-colors">Trải nghiệm & Tours</button></li>
                  <li><button onClick={() => navigateTo('faq')} className="hover:text-primary transition-colors">FAQ</button></li>
+                 <li><button onClick={() => navigateTo('admin-config')} className="hover:text-primary transition-colors text-yellow-400">⚙️ Admin Config</button></li>
               </ul>
            </div>
 

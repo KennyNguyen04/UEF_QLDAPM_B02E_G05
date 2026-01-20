@@ -114,6 +114,15 @@ public class Booking
     [Column(TypeName = "decimal(18,2)")]
     public decimal TotalPrice { get; set; }
     
+    // Weekend Surcharge Fields
+    public int WeekendNights { get; set; } = 0; // Số đêm cuối tuần (Thứ 7, Chủ nhật)
+    
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal WeekendSurchargeRate { get; set; } = 0; // Tỷ lệ % phụ thu tại thời điểm đặt
+    
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal WeekendSurchargeAmount { get; set; } = 0; // Số tiền phụ thu cuối tuần
+    
     [MaxLength(50)]
     public string Status { get; set; } = "pending"; // pending, confirmed, cancelled, completed
     
@@ -336,4 +345,23 @@ public class TourBooking
     public string Status { get; set; } = "pending";
     
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+}
+
+// ====== SYSTEM CONFIG ======
+public class SystemConfig
+{
+    [Key]
+    public int Id { get; set; }
+    
+    [Required]
+    [MaxLength(100)]
+    public string ConfigKey { get; set; } = string.Empty;
+    
+    [MaxLength(500)]
+    public string ConfigValue { get; set; } = string.Empty;
+    
+    [MaxLength(500)]
+    public string Description { get; set; } = string.Empty;
+    
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 }

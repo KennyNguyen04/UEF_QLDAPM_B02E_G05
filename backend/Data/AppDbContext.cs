@@ -23,6 +23,7 @@ public class AppDbContext : DbContext
     public DbSet<ContactRequest> ContactRequests { get; set; }
     public DbSet<EventBooking> EventBookings { get; set; }
     public DbSet<TourBooking> TourBookings { get; set; }
+    public DbSet<SystemConfig> SystemConfigs { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -71,5 +72,10 @@ public class AppDbContext : DbContext
         // Index for Customer Email
         modelBuilder.Entity<Customer>()
             .HasIndex(c => c.Email);
+        
+        // Unique constraint for SystemConfig Key
+        modelBuilder.Entity<SystemConfig>()
+            .HasIndex(sc => sc.ConfigKey)
+            .IsUnique();
     }
 }

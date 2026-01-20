@@ -137,3 +137,4 @@ D:\Chuong Trinh Dai Hoc\SV nam 4 2025-2026\quan ly du an\Website-Resort-Project\
 D:\Chuong Trinh Dai Hoc\SV nam 4 2025-2026\quan ly du an\Website-Resort-Project\the-wandering-rose\backend\obj\Debug\net9.0\TheWanderingRose.API.pdb
 D:\Chuong Trinh Dai Hoc\SV nam 4 2025-2026\quan ly du an\Website-Resort-Project\the-wandering-rose\backend\obj\Debug\net9.0\TheWanderingRose.API.genruntimeconfig.cache
 D:\Chuong Trinh Dai Hoc\SV nam 4 2025-2026\quan ly du an\Website-Resort-Project\the-wandering-rose\backend\obj\Debug\net9.0\ref\TheWanderingRose.API.dll
+D:\Chuong Trinh Dai Hoc\SV nam 4 2025-2026\quan ly du an\Website-Resort-Project\the-wandering-rose\backend\obj\Debug\net9.0\TheWanderingRose.API.sourcelink.json

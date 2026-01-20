@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Room } from '../types';
-import { formatCurrency } from '../utils';
-import { Clock, ChevronLeft, CreditCard, CheckCircle, Minus, Plus, ChevronDown, Calendar } from 'lucide-react';
+import { formatCurrency, countWeekendNights, calculateWeekendSurcharge } from '../utils';
+import { Clock, ChevronLeft, CreditCard, CheckCircle, Minus, Plus, ChevronDown, Calendar, AlertTriangle } from 'lucide-react';
 
 interface CheckoutViewProps {
   checkIn: Date | null;
@@ -59,6 +59,9 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({
 
   const [paymentMethod, setPaymentMethod] = useState<'bank' | 'card'>('bank');
   const [agreed, setAgreed] = useState(false);
+  
+  // Weekend surcharge state
+  const [weekendSurchargeRate, setWeekendSurchargeRate] = useState(10); // Default 10%
 
   // --- EFFECTS ---
   useEffect(() => {
@@ -66,6 +69,23 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
     return () => clearInterval(timer);
+  }, []);
+
+  // Fetch weekend surcharge rate from API
+  useEffect(() => {
+    const fetchSurchargeRate = async () => {
+      try {
+        const response = await fetch('/api/config/weekend-surcharge');
+        const data = await response.json();
+        if (data.success && data.data) {
+          setWeekendSurchargeRate(data.data.rate);
+        }
+      } catch (error) {
+        console.error('Failed to fetch surcharge rate:', error);
+        // Keep default 10%
+      }
+    };
+    fetchSurchargeRate();
   }, []);
 
   // --- HELPERS ---
@@ -171,6 +191,20 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({
   };
 
   const totalAmount = calculateTotal();
+
+  // Calculate weekend surcharge
+  const weekendNights = checkIn && checkOut ? countWeekendNights(checkIn, checkOut) : 0;
+  
+  const calculateWeekendSurchargeAmount = () => {
+      let surchargeTotal = 0;
+      selectedRooms.forEach(({ room, quantity }) => {
+          surchargeTotal += calculateWeekendSurcharge(room.price * quantity, weekendNights, weekendSurchargeRate);
+      });
+      return surchargeTotal;
+  };
+  
+  const weekendSurchargeAmount = calculateWeekendSurchargeAmount();
+  const totalWithSurcharge = totalAmount + weekendSurchargeAmount;
 
 
   return (
@@ -453,6 +487,18 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({
                              <span>{formatCurrency(item.room.price * item.quantity * nights).replace('₫', 'đ')}</span>
                          </div>
                      ))}
+
+                     {/* Weekend Surcharge Notice */}
+                     {weekendNights > 0 && (
+                         <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-sm mt-2">
+                             <div className="flex items-start gap-2">
+                                 <AlertTriangle size={16} className="text-yellow-600 mt-0.5 flex-shrink-0" />
+                                 <p className="text-xs text-yellow-700">
+                                     Đặt phòng có <strong>{weekendNights}</strong> đêm cuối tuần (Thứ 7, Chủ nhật) và được áp dụng phụ thu {weekendSurchargeRate}%.
+                                 </p>
+                             </div>
+                         </div>
+                     )}
                      
                      <div className="w-full h-px bg-gray-100 my-4"></div>
                      
@@ -467,8 +513,14 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({
                          <span>Tiền phòng</span>
                          <span>{formatCurrency(totalAmount).replace('₫', 'đ')}</span>
                      </div>
+                     {weekendNights > 0 && (
+                         <div className="flex justify-between text-sm font-bold text-yellow-600">
+                             <span>Phụ phí cuối tuần ({weekendNights} đêm × {weekendSurchargeRate}%)</span>
+                             <span>+{formatCurrency(weekendSurchargeAmount).replace('₫', 'đ')}</span>
+                         </div>
+                     )}
                      <div className="flex justify-between text-sm font-bold text-gray-700">
-                         <span>Phụ phí</span>
+                         <span>Phụ phí khác</span>
                          <span>0 đ</span>
                      </div>
                      <div className="flex justify-between text-sm font-bold text-gray-700">
@@ -484,7 +536,7 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({
                      
                      <div className="flex justify-between items-end">
                          <span className="font-bold text-sm">Tổng thanh toán</span>
-                         <span className="font-serif text-xl font-bold text-[#2C2C2C]">{formatCurrency(totalAmount).replace('₫', 'đ')}</span>
+                         <span className="font-serif text-xl font-bold text-[#2C2C2C]">{formatCurrency(totalWithSurcharge).replace('₫', 'đ')}</span>
                      </div>
                      <div className="text-[10px] text-gray-400 text-right font-light">(Bao gồm thuế GTGT 10% và phí dịch vụ 5%)</div>
                  </div>

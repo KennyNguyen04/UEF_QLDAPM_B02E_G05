@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheWanderingRose.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7431eea99f7c471cb81a0f5c7c39042ef8ffd9d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TheWanderingRose.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TheWanderingRose.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

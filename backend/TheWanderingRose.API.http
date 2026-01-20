@@ -1,6 +1,63 @@
 @TheWanderingRose.API_HostAddress = http://localhost:5034
 
-GET {{TheWanderingRose.API_HostAddress}}/weatherforecast/
+### Get rooms
+GET {{TheWanderingRose.API_HostAddress}}/api/rooms
 Accept: application/json
+
+###
+
+### Get weekend surcharge rate
+GET {{TheWanderingRose.API_HostAddress}}/api/config/weekend-surcharge
+Accept: application/json
+
+###
+
+### Update weekend surcharge rate
+PUT {{TheWanderingRose.API_HostAddress}}/api/config/weekend-surcharge
+Content-Type: application/json
+
+{
+    "configValue": "15"
+}
+
+###
+
+### Create booking with weekend (Red Rose House, Nov 6-9, 2027 - 2 weekend nights)
+POST {{TheWanderingRose.API_HostAddress}}/api/bookings
+Content-Type: application/json
+
+{
+    "fullName": "Test Weekend",
+    "email": "weekend@test.com",
+    "phone": "0987654321",
+    "checkIn": "2027-11-06T14:00:00",
+    "checkOut": "2027-11-09T12:00:00",
+    "rooms": [
+        {
+            "roomId": 6,
+            "quantity": 1
+        }
+    ]
+}
+
+###
+
+### Create booking NO weekend (Red Rose House, Nov 8-10, 2027 - 0 weekend nights)
+POST {{TheWanderingRose.API_HostAddress}}/api/bookings
+Content-Type: application/json
+
+{
+    "fullName": "Test No Weekend",
+    "email": "noweekend@test.com",
+    "phone": "0987654322",
+    "checkIn": "2027-11-08T14:00:00",
+    "checkOut": "2027-11-10T12:00:00",
+    "rooms": [
+        {
+            "roomId": 5,
+            "quantity": 1
+        }
+    ]
+}
 
 ###

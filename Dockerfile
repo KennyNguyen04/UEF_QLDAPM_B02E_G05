@@ -1,16 +1,17 @@
 # Build stage
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --silent
 
 # Copy all source files
 COPY . .
 
-# Set API URL for production (will be overridden by environment)
-ENV VITE_API_URL=http://localhost:5000/api
+# Build argument for API URL
+ARG VITE_API_URL=/api
+ENV VITE_API_URL=$VITE_API_URL
 
 # Build the application
 RUN npm run build
@@ -27,6 +28,10 @@ COPY --from=build /app/dist .
 
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Add healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD wget --quiet --tries=1 --spider http://localhost:80/health || exit 1
 
 # Expose port
 EXPOSE 80

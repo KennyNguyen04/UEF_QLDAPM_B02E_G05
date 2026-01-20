@@ -474,5 +474,19 @@ public static class DbInitializer
 
         context.Faqs.AddRange(faqs);
         context.SaveChanges();
+
+        // === SYSTEM CONFIGS ===
+        var systemConfigs = new List<SystemConfig>
+        {
+            new SystemConfig 
+            { 
+                ConfigKey = "WEEKEND_SURCHARGE_RATE", 
+                ConfigValue = "10", 
+                Description = "Tỷ lệ phụ thu cuối tuần (%) - Áp dụng cho các đêm Thứ 7 và Chủ nhật"
+            }
+        };
+
+        context.SystemConfigs.AddRange(systemConfigs);
+        context.SaveChanges();
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Room } from '../types';
-import { formatCurrency } from '../utils';
-import { Clock, ChevronLeft, Copy, Check, ChevronDown, Users } from 'lucide-react';
+import { formatCurrency, countWeekendNights, calculateWeekendSurcharge } from '../utils';
+import { Clock, ChevronLeft, Copy, Check, ChevronDown, Users, AlertTriangle } from 'lucide-react';
 
 interface PaymentViewProps {
   checkIn: Date | null;
@@ -10,6 +10,7 @@ interface PaymentViewProps {
   customerInfo: any;
   roomConfigs: { [key: number]: { name: string, adults: number, children: number, infants: number } };
   bookingId: string;
+  weekendSurchargeRate?: number; // Tỷ lệ phụ thu cuối tuần
   onBack: () => void;
   onFinish: () => void;
 }
@@ -21,6 +22,7 @@ export const PaymentView: React.FC<PaymentViewProps> = ({
   customerInfo,
   roomConfigs,
   bookingId,
+  weekendSurchargeRate = 10,
   onBack,
   onFinish
 }) => {
@@ -64,7 +66,21 @@ export const PaymentView: React.FC<PaymentViewProps> = ({
     return roomTotal;
   };
 
-  const totalAmount = calculateTotal();
+  // Calculate weekend surcharge
+  const weekendNights = checkIn && checkOut ? countWeekendNights(checkIn, checkOut) : 0;
+  
+  const calculateWeekendSurchargeAmount = () => {
+      let surchargeTotal = 0;
+      selectedRooms.forEach(({ room, quantity }) => {
+          surchargeTotal += calculateWeekendSurcharge(room.price * quantity, weekendNights, weekendSurchargeRate);
+      });
+      return surchargeTotal;
+  };
+  
+  const baseAmount = calculateTotal();
+  const weekendSurchargeAmount = calculateWeekendSurchargeAmount();
+  const totalAmount = baseAmount + weekendSurchargeAmount;
+  
   const bankAccount = "396366668888";
   
   // VietQR QuickLink (Using Techcombank as example from design)
@@ -168,6 +184,17 @@ export const PaymentView: React.FC<PaymentViewProps> = ({
                        <span className="font-bold text-sm">Tổng thanh toán</span>
                        <span className="font-bold text-lg text-[#2C2C2C]">{formatCurrency(totalAmount).replace('₫', 'đ')}</span>
                    </div>
+                   {weekendNights > 0 && (
+                       <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-sm mt-3">
+                           <div className="flex items-start gap-2">
+                               <AlertTriangle size={14} className="text-yellow-600 mt-0.5 flex-shrink-0" />
+                               <div className="text-xs text-yellow-700">
+                                   <p className="font-medium mb-1">Phụ phí cuối tuần đã được áp dụng</p>
+                                   <p>{weekendNights} đêm cuối tuần × {weekendSurchargeRate}% = <strong>{formatCurrency(weekendSurchargeAmount).replace('₫', 'đ')}</strong></p>
+                               </div>
+                           </div>
+                       </div>
+                   )}
                    <div className="text-[10px] text-gray-400 text-right font-light mt-1">(Bao gồm thuế GTGT 10% và phí dịch vụ 5%)</div>
               </div>
 

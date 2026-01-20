@@ -64,7 +64,8 @@ public record BookingResponseDto(
     decimal TotalPrice,
     string Status,
     CustomerDto Customer,
-    List<BookingRoomDetailDto> Rooms
+    List<BookingRoomDetailDto> Rooms,
+    WeekendSurchargeInfoDto? WeekendSurcharge
 );
 
 public record BookingRoomDetailDto(
@@ -166,4 +167,32 @@ public record ApiResponse<T>(
     bool Success,
     string Message,
     T? Data
+);
+
+// ====== WEEKEND SURCHARGE DTOs ======
+public record WeekendSurchargeInfoDto(
+    int WeekendNights,
+    decimal SurchargeRate,
+    decimal SurchargeAmount
+);
+
+public record BookingPriceBreakdownDto(
+    decimal BasePrice,
+    WeekendSurchargeInfoDto WeekendSurcharge,
+    decimal TotalPrice
+);
+
+// ====== SYSTEM CONFIG DTOs ======
+public record SystemConfigDto(
+    string ConfigKey,
+    string ConfigValue,
+    string Description
+);
+
+public record UpdateConfigDto(
+    string ConfigValue
+);
+
+public record WeekendSurchargeRateDto(
+    decimal Rate
 );

@@ -102,3 +102,22 @@ export interface ContactRequest {
   subject: string;
   message: string;
 }
+
+// ====== WEEKEND SURCHARGE ======
+export interface WeekendSurchargeInfo {
+  weekendNights: number;
+  surchargeRate: number; // 0-100 (percent)
+  surchargeAmount: number;
+}
+
+export interface BookingPriceBreakdown {
+  basePrice: number;
+  weekendSurcharge: WeekendSurchargeInfo;
+  totalPrice: number;
+}
+
+export interface SystemConfig {
+  configKey: string;
+  configValue: string;
+  description: string;
+}
