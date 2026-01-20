@@ -10,162 +10,161 @@
 | **Ngày bắt đầu** | 19/12/2025 |
 | **Ngày kết thúc** | 08/01/2026 |
 | **Tổng thời gian** | 21 ngày |
-| **Số Sprint** | 2 |
+| **Số Sprint** | 3 |
 | **Trạng thái** | ✅ Hoàn thành 100% |
 
 ---
 
-## 2. GANTT CHART - TỔNG QUAN
+## 2. GANTT CHART - TỔNG QUAN (3 SPRINTS)
 
 ```
-TASK                          |Dec 19-25    |Dec 26-Jan 01|Jan 02-08    |
-                              |S1 Week 1    |S1-S2 Trans  |S2 Week 2    |
+TASK                          |Dec 19-25    |Dec 26-31    |Jan 02-08    |
+                              |SPRINT 1     |SPRINT 2     |SPRINT 3     |
+                              |Backend      |API Integ    |Deploy       |
 ──────────────────────────────┼─────────────┼─────────────┼─────────────┤
-PROJECT MANAGEMENT            |             |             |             |
-├─ Project Kickoff            |██           |             |             |
-├─ Sprint 1 Planning          |██           |             |             |
-├─ Daily Standups             |███████████████████████████████████████ |
-├─ Sprint 1 Review            |             |██           |             |
-├─ Sprint 2 Planning          |             |██           |             |
-├─ Sprint 2 Review            |             |             |          ██ |
-└─ Documentation              |             |             |      ██████ |
+SPRINT 1: BACKEND SETUP       |             |             |             |
+├─ Analyze React project      |████         |             |             |
+├─ Create implementation plan |████         |             |             |
+├─ Define 13 EF models        |  ██████     |             |             |
+├─ Configure DbContext        |    ████     |             |             |
+├─ Generate EF migration      |      ██     |             |             |
+├─ Create database seeder     |      ████   |             |             |
+├─ Seed data from constants   |        ████ |             |             |
+├─ Analyze Figma & Export     |          ██ |             |             |
+└─ Create useApi.ts hooks     |          ██ |             |             |
                               |             |             |             |
-SPRINT 1 DEVELOPMENT          |             |             |             |
-├─ Project Setup              |████         |             |             |
-├─ Database Design            |  ██████     |             |             |
-├─ API Setup                  |    ██████   |             |             |
-├─ Home Page                  |    ██████   |             |             |
-├─ Room Categories            |      ██████ |             |             |
-├─ Room Detail                |        ████ |██           |             |
-├─ Booking Calendar           |          ██ |████         |             |
-└─ Sprint 1 Testing           |             |████         |             |
+SPRINT 2: API INTEGRATION     |             |             |             |
+├─ Add CORS configuration     |             |██           |             |
+├─ Add .env configuration     |             |██           |             |
+├─ Implement 9 Controllers    |             |████████     |             |
+├─ Create api.ts service      |             |    ████     |             |
+├─ Convert HomeView to API    |             |      ████   |             |
+├─ Convert RoomCategories     |             |        ████ |             |
+└─ Build Booking Calendar     |             |        ████ |             |
                               |             |             |             |
-SPRINT 2 DEVELOPMENT          |             |             |             |
-├─ Checkout Flow              |             |  ████       |██           |
-├─ Payment View               |             |    🎄       |████         |
-├─ Confirmation               |             |    🎄       |  ████       |
-├─ Services Page              |             |    🎄       |    ████     |
-├─ Tours Page                 |             |    🎄       |      ████   |
-├─ Contact & FAQ              |             |    🎄       |        ████ |
-├─ Integration Testing        |             |             |        ████ |
-└─ Bug Fixes                  |             |             |          ██ |
+SPRINT 3: DEPLOYMENT          |             |             |             |
+├─ Deploy to Docker           |             |             |██████       |
+├─ Convert ContactUs          |             |             |  ████       |
+├─ Convert ServicesEvents     |             |             |    ████     |
+├─ Convert FAQ & Tours        |             |             |      ████   |
+├─ Code Review                |             |             |        ████ |
+├─ Execute Final Testing      |             |             |          ██ |
+└─ Write Documentation        |             |             |          ██ |
 ──────────────────────────────┴─────────────┴─────────────┴─────────────┘
+                              25/12         31/12         08/01
+                              Sprint 1      Sprint 2      Sprint 3
+                              Review        Review        Review
 ```
 
-> 🎄 = Nghỉ Tết Dương lịch (01/01/2026)
+> 🎄 01/01/2026 = Nghỉ Tết Dương lịch
 
 ---
 
-## 3. MILESTONE 1 REPORT (29/12/2025)
+## 3. MILESTONE 1 REPORT (25/12/2025 - Sprint 1 Review)
 
 ### 3.1 Planned vs Actual
 
 | Deliverable | Planned | Actual | Status |
 |-------------|---------|--------|--------|
-| Project Setup | 21/12 | 20/12 | ✅ Early |
-| Database Design | 23/12 | 23/12 | ✅ On time |
-| API Setup | 25/12 | 25/12 | ✅ On time |
-| Home Page | 25/12 | 24/12 | ✅ Early |
-| Room Categories | 27/12 | 27/12 | ✅ On time |
-| Room Detail | 28/12 | 28/12 | ✅ On time |
-| Booking Calendar | 29/12 | 29/12 | ✅ On time |
+| Analyze React project | 21/12 | 20/12 | ✅ Early |
+| Implementation plan | 21/12 | 20/12 | ✅ Early |
+| 13 EF Models | 23/12 | 22/12 | ✅ Early |
+| DbContext + Migration | 24/12 | 23/12 | ✅ Early |
+| Database Seeder | 24/12 | 24/12 | ✅ On time |
+| useApi.ts hooks | 25/12 | 25/12 | ✅ On time |
 
 ### 3.2 Sprint 1 Metrics
 
 | Metric | Value |
 |--------|-------|
-| Planned Story Points | 40 |
-| Completed Story Points | 38 |
-| Velocity | 38 points |
-| Completion Rate | 95% |
-
-### 3.3 Earned Value at M1
-
-| Metric | Value | Target |
-|--------|-------|--------|
-| PV | 36,636,600 | - |
-| EV | 35,227,500 | ≥ PV |
-| SPI | 0.96 | ≥ 1.0 |
-| Status | ⚠️ Slightly behind | - |
-
-### 3.4 Issues & Actions
-
-| Issue | Impact | Action |
-|-------|--------|--------|
-| Booking Calendar phức tạp hơn dự kiến | 2 points debt | Carry to Sprint 2 |
-| 01/01 nghỉ lễ | Lost 1 day | Increase effort other days |
+| Planned Story Points | 25 |
+| Completed Story Points | 25 |
+| Velocity | 25 points |
+| Completion Rate | 100% |
 
 ---
 
-## 4. FINAL MILESTONE REPORT (08/01/2026)
+## 4. MILESTONE 2 REPORT (31/12/2025 - Sprint 2 Review)
 
-### 4.1 Final Delivery Status
+### 4.1 Planned vs Actual
 
-| Deliverable | Status |
-|-------------|--------|
-| ✅ Frontend Complete | 21 components |
-| ✅ Backend API | 5 controllers, 13 entities |
-| ✅ Booking Flow | End-to-end working |
-| ✅ Services & Tours | Form submission working |
-| ✅ Docker Setup | docker-compose ready |
-| ✅ Documentation | All artifacts complete |
+| Deliverable | Planned | Actual | Status |
+|-------------|---------|--------|--------|
+| CORS + .env | 27/12 | 26/12 | ✅ Early |
+| 9 Controllers | 29/12 | 28/12 | ✅ Early |
+| api.ts service | 30/12 | 29/12 | ✅ Early |
+| HomeView API | 30/12 | 30/12 | ✅ On time |
+| RoomCategories API | 31/12 | 30/12 | ✅ Early |
+| Booking Calendar | 31/12 | 31/12 | ✅ On time |
 
 ### 4.2 Sprint 2 Metrics
 
 | Metric | Value |
 |--------|-------|
-| Planned Story Points | 35 |
-| Completed Story Points | 37 |
-| Velocity | 37 points |
-| Completion Rate | 106% |
-
-### 4.3 Project Totals
-
-| Metric | Sprint 1 | Sprint 2 | Total |
-|--------|----------|----------|-------|
-| Story Points | 38 | 37 | 75 |
-| Bugs Found | 8 | 5 | 13 |
-| Bugs Fixed | 8 | 5 | 13 |
-| Test Cases | 12 | 11 | 23 |
-
-### 4.4 Final EVM
-
-| Metric | Value | Status |
-|--------|-------|--------|
-| PV | 70,455,000 | - |
-| EV | 70,455,000 | 100% |
-| AC | 69,500,000 | Under budget |
-| SPI | 1.00 | ✅ On schedule |
-| CPI | 1.01 | ✅ Under budget |
+| Planned Story Points | 25 |
+| Completed Story Points | 25 |
+| Velocity | 25 points |
+| Completion Rate | 100% |
 
 ---
 
-## 5. RECOVERY PLAN (Đã thực hiện)
+## 5. FINAL MILESTONE REPORT (08/01/2026 - Sprint 3 Review)
 
-### Vấn đề tại Milestone 1:
-- SPI = 0.96 (trễ 4%)
+### 5.1 Final Delivery Status
 
-### Giải pháp đã áp dụng:
-1. ✅ Không thêm scope mới trong Sprint 2
-2. ✅ Tăng pair programming cho tasks phức tạp
-3. ✅ Giảm meeting time, focus vào development
-4. ✅ Team members hỗ trợ cross-functional
+| Deliverable | Status |
+|-------------|--------|
+| ✅ Docker Deployment | Production ready |
+| ✅ All Pages API connected | 4 pages converted |
+| ✅ Code Review | Completed with fixes |
+| ✅ Testing | 23 test cases passed |
+| ✅ Documentation | Complete |
 
-### Kết quả:
-- Final SPI = 1.00 ✅
-- All features delivered on time ✅
+### 5.2 Sprint 3 Metrics
+
+| Metric | Value |
+|--------|-------|
+| Planned Story Points | 25 |
+| Completed Story Points | 25 |
+| Velocity | 25 points |
+| Completion Rate | 100% |
 
 ---
 
-## 6. LESSONS LEARNED
+## 6. PROJECT TOTALS
+
+| Metric | Sprint 1 | Sprint 2 | Sprint 3 | Total |
+|--------|----------|----------|----------|-------|
+| Story Points | 25 | 25 | 25 | 75 |
+| Duration | 7 days | 6 days | 7 days | 20 days |
+| Bugs Found | 3 | 5 | 5 | 13 |
+| Bugs Fixed | 3 | 5 | 5 | 13 |
+| Test Cases | 8 | 7 | 8 | 23 |
+
+---
+
+## 7. EVM SUMMARY
+
+| Metric | Sprint 1 | Sprint 2 | Sprint 3 | Final |
+|--------|----------|----------|----------|-------|
+| PV | 25 pts | 50 pts | 75 pts | 75 pts |
+| EV | 25 pts | 50 pts | 75 pts | 75 pts |
+| SPI | 1.00 | 1.00 | 1.00 | 1.00 |
+| Status | ✅ | ✅ | ✅ | ✅ On schedule |
+
+---
+
+## 8. LESSONS LEARNED
 
 | Category | Lesson |
 |----------|--------|
-| **Estimation** | Calendar picker phức tạp hơn expected, cần buffer time |
-| **Holiday** | Factor in holidays trong planning |
-| **Teamwork** | Pair programming hiệu quả cho tasks khó |
-| **Scope** | Keep features trong scope, không creep |
+| **Planning** | Chia 3 sprints giúp quản lý workload tốt hơn |
+| **Backend** | EF Core migration cần test kỹ trước khi deploy |
+| **API** | CORS cần config đúng từ đầu |
+| **Deployment** | Docker giúp deployment nhất quán |
+| **Teamwork** | Daily standup quan trọng để sync progress |
 
 ---
 
-*Phiên bản: 1.0 | Ngày tạo: 08/01/2026*
+*Phiên bản: 3.0 | Ngày cập nhật: 15/01/2026*
+*Người lập: Nguyễn Xuân Hiếu (Scrum Master)*

@@ -1,12 +1,12 @@
 # SPRINT 1 BACKLOG
 ## The Wandering Rose - Villa Booking System
-### Sprint 1: 19/12/2025 - 29/12/2025
+### Sprint 1: 19/12/2025 - 25/12/2025 (Backend & Database Setup)
 
 ---
 
 ## 1. SPRINT GOAL
 
-> Hoàn thành core booking flow: Từ xem phòng đến chọn ngày đặt phòng
+> Xây dựng nền tảng Backend: Database, Entity Models, Seeder và React Hooks
 
 ---
 
@@ -14,10 +14,10 @@
 
 | Metric | Planned | Actual |
 |--------|---------|--------|
-| Duration | 11 days | 11 days |
-| Story Points | 40 | 38 |
-| Velocity | - | 38 |
-| Completion | 100% | 95% |
+| Duration | 7 days | 7 days |
+| Story Points | 25 | 25 |
+| Velocity | - | 25 |
+| Completion | 100% | 100% |
 
 ---
 
@@ -25,30 +25,25 @@
 
 | ID | Task | Story | Assignee | Est (h) | Status |
 |----|------|-------|----------|---------|--------|
-| T-001 | Setup React + Vite project | US-001 | C | 2 | ✅ Done |
-| T-002 | Setup Tailwind CSS | US-001 | C | 1 | ✅ Done |
-| T-003 | Design database schema | US-002 | E | 4 | ✅ Done |
-| T-004 | Create EF migrations | US-002 | E | 2 | ✅ Done |
-| T-005 | Seed initial data | US-002 | E | 2 | ✅ Done |
-| T-006 | Create RoomsController | US-003 | D | 3 | ✅ Done |
-| T-007 | Create ZonesController | US-003 | D | 2 | ✅ Done |
-| T-008 | Create BookingsController | US-003 | D | 4 | ✅ Done |
-| T-009 | Setup CORS | US-003 | D | 1 | ✅ Done |
-| T-010 | Build Hero section | US-004 | C | 3 | ✅ Done |
-| T-011 | Build Navigation | US-004 | C | 2 | ✅ Done |
-| T-012 | Build Footer | US-004 | C | 2 | ✅ Done |
-| T-013 | Build Zone cards | US-005 | C | 3 | ✅ Done |
-| T-014 | Build Room list | US-005 | C | 3 | ✅ Done |
-| T-015 | Build RoomCard component | US-005 | C | 2 | ✅ Done |
-| T-016 | Build RoomDetailView | US-006 | C | 4 | ✅ Done |
-| T-017 | Build image gallery | US-006 | C | 2 | ✅ Done |
-| T-018 | Implement zone filter | US-007 | C | 2 | ✅ Done |
-| T-019 | Build calendar modal | US-008 | C | 6 | ✅ Done |
-| T-020 | Implement date selection | US-008 | C | 4 | ✅ Done |
-| T-021 | Guest selector | US-008 | C | 2 | ✅ Done |
-| T-022 | Search logic | US-008 | D | 4 | ✅ Done |
-| T-023 | Write test cases Sprint 1 | US-009 | F | 4 | ✅ Done |
-| T-024 | Execute tests | US-009 | F | 2 | ✅ Done |
+| T-001 | Analyze React/Vite project structure | US-001 | Nguyễn Hoàng Dũng | 4 | ✅ Done |
+| T-002 | Identify components and data models | US-001 | Nguyễn Hoàng Dũng | 2 | ✅ Done |
+| T-003 | Create implementation plan document | US-002 | Nguyễn Hoàng Dũng | 3 | ✅ Done |
+| T-004 | Define User entity model | US-003 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-005 | Define Villa entity model | US-003 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-006 | Define Room entity model | US-003 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-007 | Define Booking entity model | US-003 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-008 | Define remaining 9 entity models | US-003 | Đặng Gia Khánh | 4 | ✅ Done |
+| T-009 | Configure DbContext | US-004 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-010 | Configure SQL Server connection | US-004 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-011 | Generate EF migration | US-005 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-012 | Create tables via migration | US-005 | Đặng Gia Khánh | 1 | ✅ Done |
+| T-013 | Create database seeder class | US-006 | Đặng Gia Khánh | 3 | ✅ Done |
+| T-014 | Seed initial data from constants.ts | US-007 | Nguyễn Thành Trung | 4 | ✅ Done |
+| T-015 | Implement data validation | US-007 | Nguyễn Thành Trung | 2 | ✅ Done |
+| T-016 | Phân tích Figma design | US-008 | Phạm Công Khánh | 3 | ✅ Done |
+| T-017 | Export assets từ Figma | US-008 | Phạm Công Khánh | 2 | ✅ Done |
+| T-018 | Create useApi.ts React hooks | US-009 | Bùi Trần Hoàng Huy | 3 | ✅ Done |
+| T-019 | Test API hooks | US-009 | Bùi Trần Hoàng Huy | 1 | ✅ Done |
 
 ---
 
@@ -56,25 +51,19 @@
 
 ```
 Story Points
-   40 │████
+   25 │████
       │████████
-   35 │██████████████
-      │██████████████████
-   30 │██████████████████████
-      │██████████████████████████
-   25 │████████████████████████████████
-      │████████████████████████████████████
-   20 │████████████████████████████████████████
-      │████████████████████████████████████████████  ← Ideal
-   15 │████████████████████████████████████████████████
-      │████████████████████████████████████████████████████
-   10 │████████████████████████████████████████████████████████
-      │████████████████████████████████████████████████████████████
-    5 │██████████████████████████████████████████████████████████████████
-      │████████████████████████████████████████████████████████████████████████
-    0 ├───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┘
-      19  20  21  22  23  24  25  26  27  28  29
-                        Days (December)
+   20 │████████████
+      │████████████████
+   15 │████████████████████
+      │████████████████████████
+   10 │████████████████████████████
+      │████████████████████████████████
+    5 │████████████████████████████████████
+      │████████████████████████████████████████
+    0 ├───┬───┬───┬───┬───┬───┬───┘
+      19  20  21  22  23  24  25
+                  Days (December)
 ```
 
 ---
@@ -83,36 +72,40 @@ Story Points
 
 | Day | Tasks Done | Points | Notes |
 |-----|------------|--------|-------|
-| 19/12 | T-001, T-002 | 3 | Sprint start |
-| 20/12 | T-003, T-004 | 4 | DB ready |
-| 21/12 | T-005, T-006, T-007 | 5 | API basics |
-| 22/12 | T-008, T-009, T-010 | 5 | Backend complete |
-| 23/12 | T-011, T-012, T-013 | 5 | Home page done |
-| 24/12 | T-014, T-015, T-016 | 6 | Rooms done |
-| 25/12 | T-017, T-018 | 3 | Light day (Xmas) |
-| 26/12 | T-019 | 3 | Calendar start |
-| 27/12 | T-020, T-021 | 3 | Calendar continue |
-| 28/12 | T-022, T-023 | 4 | Search + Test |
-| 29/12 | T-024, Review | 2 | Sprint end |
+| 19/12 | T-001, T-002, T-003 | 4 | Sprint start - Analysis |
+| 20/12 | T-004, T-005, T-006, T-007 | 4 | Entity models - Đặng Gia Khánh |
+| 21/12 | T-008, T-009 | 3 | Remaining models + DbContext |
+| 22/12 | T-010, T-011, T-012 | 3 | SQL Server + Migration |
+| 23/12 | T-013, T-014 | 4 | Seeder - Nguyễn Thành Trung |
+| 24/12 | T-015, T-016, T-017 | 4 | Validation + Figma - Phạm Công Khánh |
+| 25/12 | T-018, T-019 | 3 | Hooks done - Bùi Trần Hoàng Huy (Xmas) |
 
 ---
 
 ## 6. SPRINT REVIEW NOTES
 
 ### What was delivered:
-- ✅ Full room browsing experience
-- ✅ Booking calendar with date/guest selection
-- ✅ Backend APIs for rooms and booking search
-- ✅ Responsive design
-
-### What wasn't completed:
-- ⚠️ 2 story points carried to Sprint 2 (minor polish)
+- ✅ 13 Entity Framework models defined
+- ✅ Database configured with SQL Server
+- ✅ EF Migration generated and applied
+- ✅ Database seeder with initial data
+- ✅ Figma assets exported
+- ✅ useApi.ts React hooks created
 
 ### Demo feedback:
-- "Calendar looks great"
-- "Booking flow is intuitive"
-- "Need to add more room images"
+- "Database structure looks solid" - Nguyễn Hoàng Dũng
+- "Ready for API development" - Team consensus
+
+### Team contributions:
+| Member | Tasks | Points |
+|--------|-------|--------|
+| Nguyễn Hoàng Dũng (PO) | T-001, T-002, T-003 | 6 |
+| Đặng Gia Khánh (BE Lead) | T-004 to T-013 | 11 |
+| Nguyễn Thành Trung (BE) | T-014, T-015 | 4 |
+| Phạm Công Khánh (FE Lead) | T-016, T-017 | 3 |
+| Bùi Trần Hoàng Huy (FE) | T-018, T-019 | 3 |
+| Nguyễn Xuân Hiếu (SM) | Facilitation | - |
 
 ---
 
-*Phiên bản: 1.0 | Ngày tạo: 29/12/2025*
+*Phiên bản: 3.0 | Ngày cập nhật: 15/01/2026*

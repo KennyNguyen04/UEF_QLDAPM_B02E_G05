@@ -7,98 +7,80 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total User Stories** | 20 |
+| **Total User Stories** | 24 |
 | **Total Story Points** | 75 |
-| **Sprint 1** | 40 points |
-| **Sprint 2** | 35 points |
+| **Sprint 1** | 25 points |
+| **Sprint 2** | 25 points |
+| **Sprint 3** | 25 points |
 
 ---
 
 ## 2. PRODUCT BACKLOG
 
-### Sprint 1 Items (40 points)
+### Sprint 1 Items - Backend & Database Setup (25 points)
+*Thời gian: 19/12 - 25/12/2025 (7 ngày)*
 
-| ID | User Story | Priority | Points | Status |
-|----|------------|----------|:------:|--------|
-| US-001 | **Project Setup**<br>As a Dev, I want project structure setup so that I can start coding | Must | 3 | ✅ Done |
-| US-002 | **Database Design**<br>As a Dev, I want database schema designed so that I can store data | Must | 5 | ✅ Done |
-| US-003 | **API Controllers Setup**<br>As a Dev, I want API endpoints ready so that frontend can call | Must | 5 | ✅ Done |
-| US-004 | **Home Page**<br>As a User, I want to see homepage so that I understand the resort | Must | 5 | ✅ Done |
-| US-005 | **Room Categories View**<br>As a User, I want to see room categories so that I can browse | Must | 5 | ✅ Done |
-| US-006 | **Room Detail View**<br>As a User, I want to see room details so that I can decide | Must | 5 | ✅ Done |
-| US-007 | **Zone Filter**<br>As a User, I want to filter by zone so that I can narrow options | Should | 3 | ✅ Done |
-| US-008 | **Booking Calendar**<br>As a User, I want to select dates so that I can book | Must | 8 | ✅ Done |
-| US-009 | **Sprint 1 Testing**<br>As a Tester, I want to test features so that quality is ensured | Must | 1 | ✅ Done |
+| ID | User Story | Priority | Points | Assignee | Status |
+|----|------------|----------|:------:|----------|--------|
+| US-001 | **Analyze React/Vite Project**<br>As a Dev, I want to analyze existing project so that I understand the codebase | Must | 3 | Nguyễn Hoàng Dũng | ✅ Done |
+| US-002 | **Create Implementation Plan**<br>As a PM, I want implementation plan so that team has direction | Must | 2 | Nguyễn Hoàng Dũng | ✅ Done |
+| US-003 | **Define EF Models**<br>As a Dev, I want 13 Entity Framework models so that data is structured | Must | 5 | Đặng Gia Khánh | ✅ Done |
+| US-004 | **Configure DbContext & SQL Server**<br>As a Dev, I want database configured so that data can be stored | Must | 3 | Đặng Gia Khánh | ✅ Done |
+| US-005 | **Create EF Migration**<br>As a Dev, I want database tables created via migration | Must | 2 | Đặng Gia Khánh | ✅ Done |
+| US-006 | **Create Database Seeder**<br>As a Dev, I want seeder so that initial data exists | Must | 3 | Đặng Gia Khánh | ✅ Done |
+| US-007 | **Seed Data from constants.ts**<br>As a Dev, I want data seeded from frontend constants | Must | 2 | Nguyễn Thành Trung | ✅ Done |
+| US-008 | **Analyze Figma & Export Assets**<br>As a Designer, I want assets exported so that UI matches design | Should | 3 | Phạm Công Khánh | ✅ Done |
+| US-009 | **Create useApi.ts Hooks**<br>As a Dev, I want React hooks so that API calls are standardized | Must | 2 | Bùi Trần Hoàng Huy | ✅ Done |
 
-### Sprint 2 Items (35 points)
+### Sprint 2 Items - API Integration & Core UI (25 points)
+*Thời gian: 26/12 - 31/12/2025 (6 ngày)*
 
-| ID | User Story | Priority | Points | Status |
-|----|------------|----------|:------:|--------|
-| US-010 | **Booking Result View**<br>As a User, I want to see available rooms after search | Must | 5 | ✅ Done |
-| US-011 | **Checkout Page**<br>As a User, I want to enter my info to complete booking | Must | 5 | ✅ Done |
-| US-012 | **Payment View**<br>As a User, I want to see payment options | Must | 3 | ✅ Done |
-| US-013 | **Booking Confirmation**<br>As a User, I want to see booking code after confirm | Must | 3 | ✅ Done |
-| US-014 | **Services Page**<br>As a User, I want to see event services | Should | 5 | ✅ Done |
-| US-015 | **Service Detail**<br>As a User, I want to see service details | Should | 3 | ✅ Done |
-| US-016 | **Tours Page**<br>As a User, I want to see tours available | Should | 5 | ✅ Done |
-| US-017 | **Tour Detail**<br>As a User, I want to see tour details | Should | 3 | ✅ Done |
-| US-018 | **Contact Page**<br>As a User, I want to contact the resort | Should | 2 | ✅ Done |
-| US-019 | **FAQ Page**<br>As a User, I want to see FAQs | Could | 1 | ✅ Done |
-| US-020 | **Integration Testing**<br>As a Tester, I want to test full flow | Must | 3 | ✅ Done |
+| ID | User Story | Priority | Points | Assignee | Status |
+|----|------------|----------|:------:|----------|--------|
+| US-010 | **Add CORS for React Frontend**<br>As a Dev, I want CORS configured so that frontend can call API | Must | 2 | Nguyễn Thành Trung | ✅ Done |
+| US-011 | **Add .env Configuration**<br>As a Dev, I want env config so that settings are manageable | Must | 1 | Nguyễn Hoàng Dũng | ✅ Done |
+| US-012 | **Implement 9 Controllers**<br>As a Dev, I want API controllers so that data is accessible | Must | 8 | Đặng Gia Khánh, Nguyễn Thành Trung | ✅ Done |
+| US-013 | **Create api.ts Service Layer**<br>As a Dev, I want service layer so that API calls are organized | Must | 3 | Bùi Trần Hoàng Huy | ✅ Done |
+| US-014 | **Convert HomeView.tsx to API**<br>As a User, I want homepage to show real data | Must | 4 | Phạm Công Khánh | ✅ Done |
+| US-015 | **Convert RoomCategories.tsx to API**<br>As a User, I want rooms from database | Must | 4 | Phạm Công Khánh | ✅ Done |
+| US-016 | **Build Booking Calendar UI**<br>As a User, I want to select dates for booking | Must | 3 | Bùi Trần Hoàng Huy | ✅ Done |
 
----
+### Sprint 3 Items - Deployment & Final Features (25 points)
+*Thời gian: 02/01 - 08/01/2026 (7 ngày)*
 
-## 3. STORY DETAILS
-
-### US-008: Booking Calendar (8 points)
-
-**Description:**
-```
-As a User
-I want to select check-in/out dates and guests
-So that I can find available rooms
-```
-
-**Acceptance Criteria:**
-- [x] Calendar modal opens on click
-- [x] Can select check-in date
-- [x] Can select check-out date
-- [x] Validates check-out > check-in
-- [x] Can select adults/children count
-- [x] Shows number of nights
-- [x] "Apply" triggers search
-
-**Notes:** Phức tạp hơn dự kiến, cần 8 points thay vì 5.
+| ID | User Story | Priority | Points | Assignee | Status |
+|----|------------|----------|:------:|----------|--------|
+| US-017 | **Deploy to Docker Production**<br>As a DevOps, I want app deployed so that it's accessible | Must | 5 | Nguyễn Hoàng Dũng | ✅ Done |
+| US-018 | **Convert ContactUs.tsx to API**<br>As a User, I want contact form to submit data | Should | 3 | Bùi Trần Hoàng Huy | ✅ Done |
+| US-019 | **Convert ServicesEvents.tsx to API**<br>As a User, I want services from database | Should | 3 | Phạm Công Khánh | ✅ Done |
+| US-020 | **Convert FAQView.tsx to API**<br>As a User, I want FAQs from database | Could | 2 | Bùi Trần Hoàng Huy | ✅ Done |
+| US-021 | **Convert ExperiencesTours.tsx to API**<br>As a User, I want tours from database | Should | 3 | Phạm Công Khánh | ✅ Done |
+| US-022 | **Code Review**<br>As a Dev, I want code reviewed so that quality is ensured | Must | 2 | Nguyễn Hoàng Dũng | ✅ Done |
+| US-023 | **Execute Final Testing**<br>As a Tester, I want full testing so that bugs are found | Must | 4 | Nguyễn Xuân Hiếu | ✅ Done |
+| US-024 | **Write User Guide / Documentation**<br>As a User, I want documentation so that I can use the system | Must | 3 | Nguyễn Xuân Hiếu | ✅ Done |
 
 ---
 
-### US-011: Checkout Page (5 points)
-
-**Description:**
-```
-As a User
-I want to enter my personal information
-So that I can complete the booking
-```
-
-**Acceptance Criteria:**
-- [x] Form fields: Name, Email, Phone
-- [x] Input validation
-- [x] Shows selected rooms summary
-- [x] Shows total price
-- [x] Confirm button proceeds to payment
-
----
-
-## 4. VELOCITY CHART
+## 3. VELOCITY CHART
 
 ```
-Sprint 1:  ████████████████████████████████████████ 38 pts (Plan: 40)
-Sprint 2:  █████████████████████████████████████ 37 pts (Plan: 35)
-           ─────────────────────────────────────────────
-                                              Total: 75 pts
+Sprint 1:  █████████████████████████ 25 pts (Plan: 25) - Backend Focus
+Sprint 2:  █████████████████████████ 25 pts (Plan: 25) - API Integration
+Sprint 3:  █████████████████████████ 25 pts (Plan: 25) - Deployment & Final
+           ─────────────────────────────────────────────────────────────────
+                                                              Total: 75 pts
 ```
 
 ---
 
-*Phiên bản: 1.0 | Ngày tạo: 08/01/2026*
+## 4. SPRINT GOALS
+
+| Sprint | Goal | Key Deliverables |
+|--------|------|------------------|
+| **Sprint 1** | Backend foundation ready | Database, Models, Seeder, Hooks |
+| **Sprint 2** | API integration complete | Controllers, CORS, Core pages connected |
+| **Sprint 3** | Production deployment | Docker, Testing, Documentation, All pages |
+
+---
+
+*Phiên bản: 3.0 | Ngày cập nhật: 15/01/2026*

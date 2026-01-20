@@ -116,14 +116,14 @@ Cần xây dựng hệ thống web cho phép:
 
 ## 8. THÔNG TIN NHÓM DỰ ÁN
 
-| Thành viên | Vai trò Scrum | Trách nhiệm chính |
-|------------|---------------|-------------------|
-| **A** | Product Owner | Quản lý Product Backlog, ưu tiên features |
-| **B** | Scrum Master | Điều phối Scrum events, loại bỏ blockers |
-| **C** | Developer | Frontend React development |
-| **D** | Developer | Backend ASP.NET Core development |
-| **E** | Developer | Database design, API integration |
-| **F** | Developer / Tester | Testing, Quality Assurance |
+| Thành viên | MSSV | Vai trò Scrum | Vai trò Kỹ thuật | Trách nhiệm chính |
+|------------|------|---------------|------------------|-------------------|
+| **Nguyễn Hoàng Dũng** | 225051926 | Product Owner (Nhóm trưởng) | PM / Fullstack | Setup source code, GitHub, booking logic, giải quyết lỗi khó |
+| **Nguyễn Xuân Hiếu** | 225053504 | Scrum Master (Thư ký) | BA / Tester | SRS, Use Case, Test Case, UAT cuối |
+| **Đặng Gia Khánh** | 225053665 | Developer | Backend Lead / DB Designer | Thiết kế CSDL, API Villa/Search, Payment |
+| **Nguyễn Thành Trung** | 225051404 | Developer | Backend Dev | Admin Dashboard, Quản lý khách hàng, Phân quyền |
+| **Phạm Công Khánh** | 225053787 | Developer | Frontend Lead / UI Designer | Thiết kế UI/UX (Figma), Home page, Booking page |
+| **Bùi Trần Hoàng Huy** | 225050604 | Developer | Frontend Dev | Room detail, Login/Register, Responsive, API integration |
 
 ---
 
@@ -140,7 +140,7 @@ Cần xây dựng hệ thống web cho phép:
 
 ### Ngoài phạm vi (Out of Scope)
 - ❌ Payment gateway thực
-- ❌ Admin dashboard
+- ❌ Admin dashboard đầy đủ
 - ❌ Mobile app
 - ❌ Multi-language
 
@@ -151,21 +151,22 @@ Cần xây dựng hệ thống web cho phép:
 | Milestone | Ngày | Deliverables |
 |-----------|------|--------------|
 | **Kickoff** | 19/12/2025 | Project Charter, Product Backlog |
-| **Sprint 1 Review** | 29/12/2025 | Core booking flow, Room pages |
-| **Sprint 2 Review** | 08/01/2026 | Full features, Testing complete |
+| **Sprint 1 Review** | 25/12/2025 | Backend foundation, Database, EF Models, Seeder |
+| **Sprint 2 Review** | 31/12/2025 | API Integration, Controllers, Core UI pages |
+| **Sprint 3 Review** | 08/01/2026 | Docker deployment, Final pages, Testing |
 | **Final Delivery** | 08/01/2026 | Source code, Documentation |
 
 ---
 
 ## 11. PHÊ DUYỆT
 
-| Vai trò | Họ tên | Chữ ký | Ngày |
-|---------|--------|--------|------|
-| Product Owner | A | _________ | ___/___/2025 |
-| Scrum Master | B | _________ | ___/___/2025 |
-| Giảng viên | _________ | _________ | ___/___/2025 |
+| Vai trò | Họ tên | MSSV | Chữ ký | Ngày |
+|---------|--------|------|--------|------|
+| Product Owner | Nguyễn Hoàng Dũng | 225051926 | _________ | ___/___/2025 |
+| Scrum Master | Nguyễn Xuân Hiếu | 225053504 | _________ | ___/___/2025 |
+| Giảng viên | _________ | - | _________ | ___/___/2025 |
 
 ---
 
 *Tài liệu được tạo ngày 19/12/2025*
-*Phiên bản: 1.0*
+*Phiên bản: 2.0 - Cập nhật thông tin thành viên*

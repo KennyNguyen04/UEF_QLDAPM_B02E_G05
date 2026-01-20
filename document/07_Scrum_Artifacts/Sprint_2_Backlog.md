@@ -1,12 +1,12 @@
 # SPRINT 2 BACKLOG
 ## The Wandering Rose - Villa Booking System
-### Sprint 2: 30/12/2025 - 08/01/2026
+### Sprint 2: 26/12/2025 - 31/12/2025 (API Integration & Core UI)
 
 ---
 
 ## 1. SPRINT GOAL
 
-> Hoàn thành checkout flow, dịch vụ sự kiện, tour và documentation
+> Hoàn thành API Integration: CORS, Controllers, Service Layer và kết nối Core Pages
 
 ---
 
@@ -14,10 +14,10 @@
 
 | Metric | Planned | Actual |
 |--------|---------|--------|
-| Duration | 10 days | 10 days |
-| Story Points | 35 | 37 |
-| Velocity | - | 37 |
-| Completion | 100% | 106% |
+| Duration | 6 days | 6 days |
+| Story Points | 25 | 25 |
+| Velocity | - | 25 |
+| Completion | 100% | 100% |
 
 ---
 
@@ -25,25 +25,23 @@
 
 | ID | Task | Story | Assignee | Est (h) | Status |
 |----|------|-------|----------|---------|--------|
-| T-025 | Build BookingResultView | US-010 | C | 4 | ✅ Done |
-| T-026 | Room selection logic | US-010 | C | 2 | ✅ Done |
-| T-027 | Build CheckoutView | US-011 | C | 6 | ✅ Done |
-| T-028 | Form validation | US-011 | C | 2 | ✅ Done |
-| T-029 | Build PaymentView | US-012 | C | 3 | ✅ Done |
-| T-030 | Build ConfirmationView | US-013 | C | 2 | ✅ Done |
-| T-031 | Generate booking code | US-013 | D | 1 | ✅ Done |
-| T-032 | Build ServicesEvents page | US-014 | C | 4 | ✅ Done |
-| T-033 | Event booking form | US-014 | D | 2 | ✅ Done |
-| T-034 | Build ServiceDetailView | US-015 | C | 2 | ✅ Done |
-| T-035 | Build ExperiencesTours | US-016 | C | 4 | ✅ Done |
-| T-036 | Tour booking form | US-016 | D | 2 | ✅ Done |
-| T-037 | Build TourDetailView | US-017 | C | 2 | ✅ Done |
-| T-038 | Build ContactUs page | US-018 | C | 2 | ✅ Done |
-| T-039 | Contact form API | US-018 | D | 1 | ✅ Done |
-| T-040 | Build FAQView | US-019 | C | 1 | ✅ Done |
-| T-041 | Integration testing | US-020 | F | 4 | ✅ Done |
-| T-042 | Bug fixes | - | All | 3 | ✅ Done |
-| T-043 | Documentation | - | A, B | 8 | ✅ Done |
+| T-020 | Add CORS configuration | US-010 | Nguyễn Thành Trung | 2 | ✅ Done |
+| T-021 | Test CORS with React | US-010 | Nguyễn Thành Trung | 1 | ✅ Done |
+| T-022 | Add .env configuration | US-011 | Nguyễn Hoàng Dũng | 2 | ✅ Done |
+| T-023 | Create RoomsController | US-012 | Đặng Gia Khánh | 3 | ✅ Done |
+| T-024 | Create ZonesController | US-012 | Đặng Gia Khánh | 2 | ✅ Done |
+| T-025 | Create BookingsController | US-012 | Đặng Gia Khánh | 4 | ✅ Done |
+| T-026 | Create VillasController | US-012 | Nguyễn Thành Trung | 3 | ✅ Done |
+| T-027 | Create ServicesController | US-012 | Nguyễn Thành Trung | 2 | ✅ Done |
+| T-028 | Create ToursController | US-012 | Nguyễn Thành Trung | 2 | ✅ Done |
+| T-029 | Create remaining 3 Controllers | US-012 | Đặng Gia Khánh | 3 | ✅ Done |
+| T-030 | Create api.ts service layer | US-013 | Bùi Trần Hoàng Huy | 4 | ✅ Done |
+| T-031 | Convert HomeView.tsx to use API | US-014 | Phạm Công Khánh | 4 | ✅ Done |
+| T-032 | Convert Hero section to API | US-014 | Phạm Công Khánh | 2 | ✅ Done |
+| T-033 | Convert RoomCategories.tsx to API | US-015 | Phạm Công Khánh | 4 | ✅ Done |
+| T-034 | Convert RoomDetail.tsx to API | US-015 | Bùi Trần Hoàng Huy | 3 | ✅ Done |
+| T-035 | Build Booking Calendar UI | US-016 | Bùi Trần Hoàng Huy | 4 | ✅ Done |
+| T-036 | Implement date selection logic | US-016 | Bùi Trần Hoàng Huy | 2 | ✅ Done |
 
 ---
 
@@ -51,23 +49,19 @@
 
 ```
 Story Points
-   35 │██
-      │██████
-   30 │██████████
-      │██████████████
-   25 │██████████████████
-      │██████████████████████  ← 01/01 Holiday
-   20 │████████████████████████████
+   25 │████
+      │████████
+   20 │████████████
+      │████████████████
+   15 │████████████████████
+      │████████████████████████
+   10 │████████████████████████████
       │████████████████████████████████
-   15 │████████████████████████████████████
+    5 │████████████████████████████████████
       │████████████████████████████████████████
-   10 │████████████████████████████████████████████
-      │████████████████████████████████████████████████
-    5 │████████████████████████████████████████████████████
-      │████████████████████████████████████████████████████████
-    0 ├───┬───┬───┬───┬───┬───┬───┬───┬───┬───┘
-      30  31  01  02  03  04  05  06  07  08
-      Dec Dec Jan Jan Jan Jan Jan Jan Jan Jan
+    0 ├───┬───┬───┬───┬───┬───┘
+      26  27  28  29  30  31
+                  Days (December)
 ```
 
 ---
@@ -76,38 +70,41 @@ Story Points
 
 | Day | Tasks Done | Points | Notes |
 |-----|------------|--------|-------|
-| 30/12 | T-025, T-026 | 5 | Sprint start |
-| 31/12 | T-027 | 4 | Checkout build |
-| 01/01 | - | 0 | 🎄 Holiday |
-| 02/01 | T-028, T-029 | 4 | Payment done |
-| 03/01 | T-030, T-031, T-032 | 5 | Services start |
-| 04/01 | T-033, T-034, T-035 | 5 | More pages |
-| 05/01 | T-036, T-037, T-038 | 4 | Tours done |
-| 06/01 | T-039, T-040, T-041 | 5 | Testing |
-| 07/01 | T-042, T-043 (part) | 4 | Bug fixes |
-| 08/01 | T-043 (complete) | 4 | Sprint end |
+| 26/12 | T-020, T-021, T-022 | 3 | CORS + .env done |
+| 27/12 | T-023, T-024, T-025 | 5 | Core Controllers - Đặng Gia Khánh |
+| 28/12 | T-026, T-027, T-028, T-029 | 5 | Remaining Controllers |
+| 29/12 | T-030, T-031 | 5 | Service layer + HomeView |
+| 30/12 | T-032, T-033, T-034 | 5 | Pages converted to API |
+| 31/12 | T-035, T-036 | 4 | Calendar UI done |
 
 ---
 
 ## 6. SPRINT REVIEW NOTES
 
 ### What was delivered:
-- ✅ Complete checkout and payment flow
-- ✅ Booking confirmation with code generation
-- ✅ Event services (4 types)
-- ✅ Tours (4 tours)
-- ✅ Contact and FAQ pages
-- ✅ Full documentation
-
-### Sprint Velocity:
-- Planned: 35 points
-- Actual: 37 points (+2 points over commitment)
+- ✅ CORS configured for React frontend
+- ✅ Environment configuration (.env)
+- ✅ 9 API Controllers implemented
+- ✅ api.ts service layer created
+- ✅ HomeView.tsx connected to API
+- ✅ RoomCategories.tsx connected to API
+- ✅ Booking Calendar UI with date selection
 
 ### Demo feedback:
-- "Very comprehensive system"
-- "UI is beautiful and intuitive"
-- "Documentation is complete"
+- "API integration works smoothly" - Nguyễn Hoàng Dũng
+- "Calendar UI is intuitive" - Team consensus
+- "Ready for remaining pages" - Phạm Công Khánh
+
+### Team contributions:
+| Member | Tasks | Points |
+|--------|-------|--------|
+| Nguyễn Hoàng Dũng (PO) | T-022 | 2 |
+| Đặng Gia Khánh (BE Lead) | T-023, T-024, T-025, T-029 | 8 |
+| Nguyễn Thành Trung (BE) | T-020, T-021, T-026, T-027, T-028 | 6 |
+| Phạm Công Khánh (FE Lead) | T-031, T-032, T-033 | 6 |
+| Bùi Trần Hoàng Huy (FE) | T-030, T-034, T-035, T-036 | 8 |
+| Nguyễn Xuân Hiếu (SM) | Facilitation, Testing | - |
 
 ---
 
-*Phiên bản: 1.0 | Ngày tạo: 08/01/2026*
+*Phiên bản: 3.0 | Ngày cập nhật: 15/01/2026*

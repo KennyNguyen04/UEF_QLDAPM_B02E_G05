@@ -36,10 +36,11 @@
 ### 6. Q&A Document ✅
 - [x] [06_QA_Document.md](./06_QA_Document.md)
 
-### 7. Scrum Artifacts (6/6) ✅
-- [x] [Product Backlog](./07_Scrum_Artifacts/Product_Backlog.md) (20 user stories)
-- [x] [Sprint 1 Backlog](./07_Scrum_Artifacts/Sprint_1_Backlog.md)
-- [x] [Sprint 2 Backlog](./07_Scrum_Artifacts/Sprint_2_Backlog.md)
+### 7. Scrum Artifacts (7/7) ✅
+- [x] [Product Backlog](./07_Scrum_Artifacts/Product_Backlog.md) (24 user stories)
+- [x] [Sprint 1 Backlog](./07_Scrum_Artifacts/Sprint_1_Backlog.md) - Backend Setup
+- [x] [Sprint 2 Backlog](./07_Scrum_Artifacts/Sprint_2_Backlog.md) - API Integration
+- [x] [Sprint 3 Backlog](./07_Scrum_Artifacts/Sprint_3_Backlog.md) - Deployment & Final
 - [x] [Burndown Chart](./07_Scrum_Artifacts/Burndown_Chart.md)
 - [x] [Daily Scrum Minutes](./07_Scrum_Artifacts/Daily_Scrum_Minutes.md) (7 meetings)
 - [x] [Definition of Done](./07_Scrum_Artifacts/Definition_of_Done.md)
@@ -49,6 +50,9 @@
 
 ### 9. Code Review Checklist ✅
 - [x] [09_Code_Review_Checklist.md](./09_Code_Review_Checklist.md)
+
+### 10. CPI Calculation Report ✅
+- [x] [10_CPI_Calculation_Report.md](./10_CPI_Calculation_Report.md)
 
 ---
 
@@ -78,9 +82,21 @@ https://trello.com/b/4YzW6vma/villa-booking-final-report
 - **Tên:** The Wandering Rose - Villa Booking System
 - **Topic:** Topic 1 - Room booking for villa management
 - **Timeline:** 19/12/2025 - 08/01/2026
-- **Team:** 6 người (A, B, C, D, E, F)
-- **Sprints:** 2 (11 + 10 ngày)
+- **Sprints:** 3 (7 + 6 + 7 ngày)
 
 ---
 
-*Last updated: 08/01/2026*
+## 👥 THÔNG TIN NHÓM
+
+| STT | Họ Tên | MSSV | Vai trò |
+|-----|--------|------|---------|
+| 1 | **Nguyễn Hoàng Dũng** | 225051926 | Nhóm trưởng - Product Owner / PM / Fullstack |
+| 2 | **Nguyễn Xuân Hiếu** | 225053504 | Thư ký - Scrum Master / BA / Tester |
+| 3 | **Đặng Gia Khánh** | 225053665 | Backend Lead / Database Designer |
+| 4 | **Nguyễn Thành Trung** | 225051404 | Backend Developer / Admin Panel |
+| 5 | **Phạm Công Khánh** | 225053787 | Frontend Lead / UI/UX Designer |
+| 6 | **Bùi Trần Hoàng Huy** | 225050604 | Frontend Developer / Responsive |
+
+---
+
+*Last updated: 15/01/2026*

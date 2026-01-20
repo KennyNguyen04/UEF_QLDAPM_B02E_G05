@@ -7,15 +7,15 @@
 
 ### 1.1 Chi phí nhân công (Labo Contract Model)
 
-| Thành viên | Vai trò | Số ngày | Đơn giá/ngày | Thành tiền |
-|------------|---------|---------|--------------|------------|
-| A | Product Owner | 21 | 600,000 | 12,600,000 |
-| B | Scrum Master | 21 | 550,000 | 11,550,000 |
-| C | Frontend Dev | 21 | 500,000 | 10,500,000 |
-| D | Backend Dev | 21 | 500,000 | 10,500,000 |
-| E | Full-stack Dev | 21 | 500,000 | 10,500,000 |
-| F | Tester | 21 | 400,000 | 8,400,000 |
-| | **Subtotal** | | | **64,050,000** |
+| Thành viên | MSSV | Vai trò | Số ngày | Đơn giá/ngày | Thành tiền |
+|------------|------|---------|---------|--------------|------------|
+| Nguyễn Hoàng Dũng | 225051926 | Product Owner / PM | 21 | 600,000 | 12,600,000 |
+| Nguyễn Xuân Hiếu | 225053504 | Scrum Master / BA | 21 | 550,000 | 11,550,000 |
+| Đặng Gia Khánh | 225053665 | Backend Lead | 21 | 500,000 | 10,500,000 |
+| Nguyễn Thành Trung | 225051404 | Backend Dev | 21 | 500,000 | 10,500,000 |
+| Phạm Công Khánh | 225053787 | Frontend Lead | 21 | 500,000 | 10,500,000 |
+| Bùi Trần Hoàng Huy | 225050604 | Frontend Dev / Tester | 21 | 400,000 | 8,400,000 |
+| | | **Subtotal** | | | **64,050,000** |
 
 ### 1.2 Chi phí công cụ
 
@@ -120,4 +120,4 @@ CV = EV - AC = 35,227,500 - 35,000,000 = +227,500 (tiết kiệm)
 
 ---
 
-*Phiên bản: 1.0 | Ngày tạo: 19/12/2025*
+*Phiên bản: 2.0 | Ngày cập nhật: 15/01/2026*
