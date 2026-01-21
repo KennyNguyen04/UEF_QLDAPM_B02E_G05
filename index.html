@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Wandering Rose</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Pinyon+Script&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#A68A64', // The gold/brown text color
+            secondary: '#2C2C2C', // Dark gray
+            surface: '#F9F9F9',
+            footer: '#9D7E5D', // The footer background color
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Be Vietnam Pro"', '"Lato"', 'sans-serif'],
+            script: ['"Pinyon Script"', 'cursive'],
+            vietnamese: ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      color: #4a4a4a;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Hide scrollbar for clean carousel look */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Custom Date Input Styling to match design */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      cursor: pointer;
+      opacity: 0.6;
+    }
+
+    /* For white inputs, revert invert */
+    .white-input::-webkit-calendar-picker-indicator {
+      filter: invert(0);
+      opacity: 0.5;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

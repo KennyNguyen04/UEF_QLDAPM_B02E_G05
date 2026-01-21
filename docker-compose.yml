@@ -1,0 +1,70 @@
+services:
+  # SQL Server Database
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: wanderingrose-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=WanderingRose2024Strong!
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - wanderingrose-network
+    healthcheck:
+      test: [ "CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'WanderingRose2024Strong!' -C -Q 'SELECT 1' || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
+  # ASP.NET Core Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: wanderingrose-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5000
+      - ConnectionStrings__DefaultConnection=Server=db;Database=TheWanderingRoseDb;User Id=sa;Password=WanderingRose2024Strong!;TrustServerCertificate=True;MultipleActiveResultSets=true
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - wanderingrose-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/api/rooms || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # React Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=/api
+    container_name: wanderingrose-web
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - wanderingrose-network
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
+
+networks:
+  wanderingrose-network:
+    driver: bridge
