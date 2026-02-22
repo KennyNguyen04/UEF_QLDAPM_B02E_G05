@@ -1,0 +1,111 @@
+BM05/QT03-ĐT
+TRƯỜNG ĐẠI HỌC KINH TẾ - TÀI CHÍNH THÀNH PHỐ HỒ CHÍ MINH
+KHOA CÔNG NGHỆ THÔNG TIN
+
+ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN
+
+1. Tên học phần:
+Tiếng Việt: Quản trị dự án phần mềm
+Tiếng Anh: Software Project Management
+
+2. Mã học phần: ITE1140E
+3. Trình độ đào tạo: Đại học
+4. Số tín chỉ: 03 (3, 0) TC. Lý thuyết: 45 tiết. Tự học: 120 tiết.
+5. Học phần tiên quyết: ITE1125E - Công nghệ phần mềm nâng cao
+
+6. Phương pháp giảng dạy:
+- Giảng dạy lý thuyết bằng trình chiếu, viết bảng và thuyết giảng.
+- Sinh viên đọc tài liệu học tập trước mỗi bài giảng và làm các bài tập về nhà.
+- Các phương pháp áp dụng: Giải thích cụ thể (TLM1), Thuyết giảng (TLM2), Câu hỏi gợi mở (TLM4), Thảo luận (TLM9), Bài tập ở nhà (TLM20).
+
+7. Đơn vị quản lý HP: Khoa Công nghệ thông tin
+
+8. Mục tiêu của học phần:
+- G1, G2: Hiểu biết về các giai đoạn của dự án phần mềm, lên kế hoạch, ước lượng thời gian, quản lý rủi ro, điều phối nhân lực. Có kỹ năng xây dựng mô hình quản lý dự án phù hợp thực tế. Biết sử dụng công cụ quản lý. (CDR: PLO3, PLO5).
+- G3: Có ý thức quản lý dự án phần mềm theo các lĩnh vực tri thức và khung kế hoạch quản lý. (CDR: PLO10).
+
+9. Chuẩn đầu ra của học phần (CLOs):
+- CLO1 (Kiến thức): Hiểu tầm quan trọng quản lý dự án, các tác vụ quản trị, khái niệm lập dự toán và lập kế hoạch. (PLO3)
+- CLO2 (Kỹ năng): Xây dựng mô hình quản lý dự án thực tế, sử dụng công cụ quản lý. (PLO5)
+- CLO3 (Mức tự chủ): Có ý thức quản lý dự án theo tri thức và khung kế hoạch chuẩn. (PLO10)
+
+10. Mô tả tóm tắt nội dung học phần:
+Môn học cung cấp kiến thức quản trị dự án phần mềm (tác vụ, quy trình, chi phí, thời gian, nhân sự, rủi ro) và các công cụ hỗ trợ. Sinh viên cần hoàn tất môn Phân tích thiết kế hệ thống. Kết thúc môn, sinh viên có thể xây dựng và kiểm soát dự án phần mềm.
+
+11. Các yêu cầu của học phần:
+Phòng học lý thuyết máy chiếu, cài đặt công cụ cần thiết, tham dự báo cáo chuyên đề.
+
+12. Kế hoạch và nội dung giảng dạy (LÝ THUYẾT):
+
+Tuần 1: Bài 1: Giới thiệu tổng quan
+- Quy trình RUP, nhóm tác vụ cốt lõi
+- Vai trò, mục tiêu và điều kiện cần thiết cho quản lý dự án.
+(Hoạt động: TLM1, TLM2, TLM4, TLM9. Đánh giá: AM1, AM2, AM4, AM7).
+
+Tuần 2, 3: Bài 2: Các nhóm tác vụ trong quản trị dự án phần mềm thực tế
+- Nhóm 1: Xây dựng kế hoạch thực hiện
+- Nhóm 2: Theo dõi, kiểm soát và hiệu chỉnh
+- Nhóm 3: Báo cáo thống kê
+- Nhóm 4: Quản lý và phát triển con người
+- Nhóm 5: Đảm bảo quy trình, chất lượng, quản lý cấu hình.
+
+Tuần 4: Bài 3: Quy trình trong dự án
+- Các hạng mục quản lý
+- Chu trình phát triển dự án đơn/phức hợp
+- Các quy trình con.
+
+Tuần 5, 6: Bài 4: Lập dự toán và ước lượng kích thước dự án
+- Dự toán phần mềm
+- Phân rã và ước lượng kích thước (FPA Function Point Analysis)
+- Lập dự toán chi tiết và kế hoạch nhân sự.
+
+Tuần 7, 8: Bài 5: Xây dựng thời biểu thực hiện dự án
+- Các điều kiện ràng buộc
+- Kỹ thuật xây dựng thời biểu
+- Phương pháp con đường nguy hiểm (CPM)
+- Sơ đồ PERT, đường găng, tối ưu chi phí
+- Sơ đồ GANTT và Microsoft Project.
+
+Tuần 9, 10: Bài 6: Xây dựng kế hoạch dự án
+- Kế hoạch kiểm tra, nghiệm thu, phát triển dự án.
+- Kế hoạch huấn luyện, phối hợp bộ phận, quản lý tài nguyên.
+- Kiểm tra tự luận.
+
+Tuần 11: Bài 7: Quản lý con người/nhóm
+- Vấn đề quản lý, phát triển, nhận xét, đánh giá con người/nhóm.
+- Giải quyết vấn đề phát sinh, rủi ro liên quan.
+- Phương pháp tổ chức nhóm.
+
+Tuần 12: Bài 8: Quản lý rủi ro
+- Quy trình, phương pháp quản lý rủi ro
+- Case study và rủi ro trong công nghệ phần mềm.
+
+Tuần 13: Bài 9: Theo dõi và kiểm soát dự án
+- Quản lý số liệu (phạm vi, thời gian, chi phí, chất lượng...)
+- Xây dựng báo cáo dự án.
+
+Tuần 14: Bài 10: Quản lý chất lượng
+- Mục tiêu chất lượng, tác vụ thực hiện, kế hoạch phòng chống lỗi.
+
+Tuần 15: Bài 11: Quản lý cấu hình
+- Phiên bản phần mềm, hoạt động quản lý cấu hình, phần mềm hỗ trợ.
+
+13. Phương pháp đánh giá:
+- A1. Điểm quá trình (30%): Điểm danh (10%), Bài tập (20%).
+- A2. Điểm giữa kỳ (20%): Bài kiểm tra tự luận.
+- A3. Điểm thi cuối kỳ (50%): Báo cáo đồ án cuối kỳ.
+
+14. Tài liệu phục vụ học phần:
+- Chính: Roger Pressman, Bruce Maxim (2014). Software Engineering: A Practitioner's Approach. 8th Edition.
+- Tham khảo: PMI (PMBOK), George Stepanek (Software project secrets), Pankaj Jalote.
+- Website: tutorialspoint.com/software_engineering/
+
+15. Hướng dẫn sinh viên tự học:
+Sinh viên đọc các chương tương ứng trong giáo trình "Software Engineering: A Practitioner's Approach" (Roger S. Pressman) theo từng bài học đã liệt kê trong bảng nội dung chi tiết.
+
+Giảng viên dự kiến:
+1. TS. Nguyễn Hà Giang
+2. ThS. Nguyễn Thị Thanh Trúc
+
+Tp. Hồ Chí Minh, ngày... tháng... năm 2022
+(Đã ký)

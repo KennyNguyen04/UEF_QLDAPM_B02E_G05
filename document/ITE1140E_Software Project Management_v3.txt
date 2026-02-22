@@ -1,0 +1,89 @@
+UEF - UNIVERSITY OF ECONOMICS & FINANCE
+FACULTY OF INFORMATION TECHNOLOGY
+
+FINAL EXAMINATION, SEMESTER 1B, ACADEMIC YEAR: 2025-2026
+Major/Class: Information Technology
+Course: Software Project Management
+Course Code: ITE1140E
+Exam Format: Report
+
+1. Requirements
+
+General requirements:
+- Implement the full Scrum process (or a combination of Scrum + other Agile practices).
+- The team must have a minimum of 4-6 members and clear roles defined: Product Owner, Scrum Master, Development Team (roles can be concurrent/combined).
+- For team >4 members, the admin must fully implemented such as CRUD the master data.
+- Execute 2 Sprints (each Sprint 3-4 weeks).
+- Use a practical management tool: Trello.
+- All documentation must be stored online and accessible by the instructor at any time.
+
+Specific requirements - Project Submission & Report Requirements:
+The team is required to submit the following artifacts:
+1. A project charter.
+   - Reason of project: base on Q&A and your investigation in team
+   - Purpose, constraint of project: base on Q&A and your investigation in team
+   - Stakeholder: base on Q&A and your investigation in team
+   - Identified risk: base on Q&A and your investigation in team
+   - Project benefits: base on Q&A and your investigation in team
+   - Overall budget summary: base on Q&A and your investigation in team
+
+2. A document including necessary develop project management plan including:
+   - Change management plan
+   - Communication management plan
+   - Configuration management plan
+   - Cost baseline
+   - Cost management plan
+   - Human resource management plan
+   - Scope baseline
+   - Requirement management plan
+   - Risk management plan
+   - Schedule baseline
+   - Schedule management plan
+   - Scope management plan
+   - Stakeholder management plan
+
+3. A requirement specification
+4. A Gantt chart report used for monitoring 1st milestone and final milestone
+5. A report of testcase, test report
+6. A document for Q&A
+7. Source Code (fully functional).
+8. Demo Video (optional).
+
+Evaluation criteria:
+
+1. Agile & Scrum Process (25%)
+- Excellent (9-10 pts): Complete Process: Full and consistent application of Scrum rituals. Burndown Chart is actual, detailed, and logically aligned with Velocity.
+- Good (7-8 pts): Sufficient Process: All Scrum rituals are applied. Burndown Chart is recorded but may not be fully optimized or lacks some supplementary data.
+- Average (5-6 pts): Basic Process: Scrum rituals are performed fundamentally but lack consistency and management commitment. Burndown Chart or Daily Scrum Minutes are sketchy or do not reflect reality.
+- Poor (0-4 pts): Deficient Process: Core Scrum rituals are missing or ignored. Process management documents are fragmented or invalid.
+
+2. Product Quality & Features (15%)
+- Excellent (9-10 pts): Product is complete, stable, highly innovative, and exceeds the committed requirements (User Stories). UX/UI design is professional, user-friendly, and aesthetically pleasing.
+- Good (7-8 pts): Product fully meets all committed functional requirements (User Stories) across 4 Sprints. The system runs stably and features a clear, logical and easy-to-use UX/UI.
+- Average (5-6 pts): Product only addresses the core functionalities of the project. The system may still have some minor bugs. UX/UI design is simple, lacking aesthetic appeal or innovation.
+- Poor (0-4 pts): Product is incomplete or non-functional. Many basic features are missing. There are major errors affecting the user experience.
+
+3. Quality & Risk Management (20%)
+- Excellent (9-10 pts): Comprehensive Management: Definition of Done (DoD) is very clear and strictly adhered to. Test Cases (20+) are professionally designed, covering scenarios. Risk Register (10+) is deeply analyzed with effective mitigation strategies.
+- Good (7-8 pts): Good Management: DoD is clearly defined. Includes sufficient Test Cases (20+) and a Code Review Checklist. Risk Register has the required number of risks (10+) with reasonable mitigation plans.
+- Average (5-6 pts): Adequate Management: DoD is present but lacks detail. The quantity of Test Cases or Risks only meets the minimum requirement. Quality and risk control are primarily formal.
+- Poor (0-4 pts): Deficient Management: DoD, Test Cases, and Risk Register do not meet the required quantity or the content lacks practical application.
+
+4. Report & Documentation Quality (20%)
+- Excellent (9-10 pts): Exemplary Report: Report is clear, coherent, highly aesthetic, and adheres to the format. The management document being reviewed are detailed, complete, and demonstrates high contribution.
+- Good (7-8 pts): Professional Report: Report content is logical, and all mandatory sections are included. The number of management document being reviewed meets the required quantity and is of acceptable quality.
+- Average (5-6 pts): Acceptable Report: Report may have minor omissions or lack professional presentation. The number of management document being reviewed meets the minimum quantity but the content is sparse, lacking practical reflection.
+- Poor (0-4 pts): Unacceptable Report: Report lacks many important sections. The number of management document being reviewed is inadequate. Poor presentation quality.
+
+5. Cooperation in working and presentation, Demo (20%)
+- Excellent (9-10 pts): Deep Understanding: Presentation is engaging, creative, with accurate timing, highlighting core value. Demo is smooth. Answers all advanced questions about Process, Technology, Risk Management, and individual roles accurately and confidently.
+- Good (7-8 pts): Good Understanding: Presentation is clear, logical, covers all sections, and engages the audience. Demos key features effectively. Answers most questions accurately and shows good understanding of the project. Following scrum regulation.
+- Average (5-6 pts): Basic Understanding: Presentation covers the content but is lengthy or lacks flow. Demo is hesitant or has minor issues. Answers basic questions but struggles with advanced or inter-role questions. Following scrum regulation but weekly meeting record < 6.
+- Poor (0-4 pts): No Understanding: Presentation lacks core content, exceeds time limits. Fails to answer core questions, or answers project management/Scrum knowledge incorrectly. Following scrum regulation but weekly meeting record < 4 (or < 2).
+
+2. Topics/Subjects
+The following is a list of report topics for the course:
+
+Topic 1. Room booking for villa management system
+(Develop a web application for managing room booking, event, tour).
+Using Figma: https://www.figma.com/design/NjgoRULyr01tKfXNmAR0PZ/topic-1?node-id=0-1&t=MdbWvRTfHC9WKaWY-1
